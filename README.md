@@ -3,8 +3,9 @@
 
 ART EXHIBITION DATE 
 
-    you and your Girlfriend- Laura Jane, go to a local one room art exhibition that just opned up.
-    Although you are not that interested in the exhibition , you girlfriend certainly is !  And you? You are determined to make this date a succsess !
+    you and your Childhood friend/ Crush - Laura Jane, go to a local one room art exhibition that just opned up.
+    After you confessed your feelings , Laura suggested a date to find out whether you both are compatable or not, 
+    And You are determined to make this date a succsess !
     now you now get to disscus,interpret or simply look at the artwork present there, depending on what you do your date will either be a successs or fail miserablily.
 
 TECHNOLOGY
