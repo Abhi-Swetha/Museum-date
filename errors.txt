@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 29: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    zoom 0.75
-    ^
-
-File "game/script.rpy", line 36: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    zoom 0.75
-    ^
-
-File "game/script.rpy", line 41: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    zoom 0.75
-    ^
-
-File "game/script.rpy", line 46: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    zoom 0.75
-    ^
+File "game/script.rpy", line 5: invalid syntax. Perhaps you forgot a comma?
+    Character("Laura", image="L" color="#ffeba9")
+                             ^^^^^^^^^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Thu Jun 18 20:13:10 2026
+Fri Jun 19 22:05:12 2026

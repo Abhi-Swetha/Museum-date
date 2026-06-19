@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 63, in script
+    $ l+=1
+  File "game/script.rpy", line 63, in <module>
+    $ l+=1
+      ^   
+NameError: name 'l' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 63, in script
+    $ l+=1
+  File "renpy/ast.py", line 1193, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1276, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 63, in <module>
+    $ l+=1
+      ^   
+NameError: name 'l' is not defined
+
+macOS-26.5-arm64-arm-64bit arm64
+Ren'Py 8.5.3.26051504
+gushing abt my fav panels from mhanwas 1.0
+Fri Jun 19 22:13:45 2026
