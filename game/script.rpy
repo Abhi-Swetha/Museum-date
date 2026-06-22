@@ -2,7 +2,7 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define e = Character("Laura", image="L" ,color="#ffeba9")
+define e = Character("Laura", image=" L %s" ,color="#ffeba9")
 define y = Character("You", color="#ffffff")
 
 #all sprites
@@ -15,14 +15,14 @@ image L sidehappy = "images/L sidehappy.png"
 image L closedsmile = "images/L closedsmile.png"
 image L closedhappy = "images/L closedhappy.png"
 
-image side L sh = "images/side L straighthappy.png"
-image side L st = "images/side L straighttalk.png" 
-image side L ss = "images/side L straightsmile.png"
-image side L sdt = "images/side L sidetalk.png" 
-image side L sds = "images/side L sidesmile.png"
-image side L sdh = "images/side L sidehappy.png"
-image side L cs = "images/side L closedsmile.png"
-image side L ch = "images/side L closedhappy.png"
+image L sh = "images/side L straighthappy.png"
+image L st = "images/side L straighttalk.png" 
+image L ss = "images/side L straightsmile.png"
+image L sdt = "images/side L sidetalk.png" 
+image L sds = "images/side L sidesmile.png"
+image L sdh = "images/side L sidehappy.png"
+image L cs= "images/side G closedsmile.png"
+image L ch = "images/side G closedhappy.png"
 
 #all backgrounds
 image bg room = "images/bg mainplain.png"
@@ -84,6 +84,6 @@ label artgallery:
 
     scene bg artgallery 
     with fade
-    show L sh
+    show L sh 
     e "Wow, this place is amazing! I can't wait to see all the different kinds of art they have here!"
-    show L sds 
+    show L st 
