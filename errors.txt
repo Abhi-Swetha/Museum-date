@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 5: invalid syntax. Perhaps you forgot a comma?
-    Character("Laura", image="L" color="#ffeba9")
-                             ^^^^^^^^^
+File "game/script.rpy", line 6: keyword argument repeated: image
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Fri Jun 19 22:05:12 2026
+Mon Jun 22 22:35:25 2026

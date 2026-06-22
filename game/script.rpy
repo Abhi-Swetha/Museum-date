@@ -15,6 +15,15 @@ image L sidehappy = "images/L sidehappy.png"
 image L closedsmile = "images/L closedsmile.png"
 image L closedhappy = "images/L closedhappy.png"
 
+image side L sh = "images/side L straighthappy.png"
+image side L st = "images/side L straighttalk.png" 
+image side L ss = "images/side L straightsmile.png"
+image side L sdt = "images/side L sidetalk.png" 
+image side L sds = "images/side L sidesmile.png"
+image side L sdh = "images/side L sidehappy.png"
+image side L cs = "images/side L closedsmile.png"
+image side L ch = "images/side L closedhappy.png"
+
 #all backgrounds
 image bg room = "images/bg mainplain.png"
 image bg artgallery = "images/bg main.png"
@@ -30,17 +39,20 @@ image sunpencile = "images/bg sunpencile.png"
 image slime= "images/bg slime.png"
 image uravity = "images/bg uravity.png"
 # The game starts here.
-$ l=0
+default l = 0
 label start:
     scene bg room
+    with fade
 
-    show L straighthappy
+    show L straighthappy 
+    
     e "I Can't believe we are finally here! This is going to be my new favorite place!"
-    show L straightsmile
+    show L straightsmile 
 
     y "I am glad you like it! I have been here before and the food is amazing!"
 
     show L straighttalk
+
     e"really? you saying it definetly means its awesome! "
     show L straighthappy
     e"I can't wait to see what kind of food they have here !"
@@ -54,7 +66,7 @@ label start:
     menu:
         "Look at the art first":
             y "Alright, lets go look at the art first!"
-            $ l+=1
+            $ l += 1
             jump artgallery
         "Go eat first":
             y "Alright, lets go eat first!"
@@ -71,6 +83,7 @@ label food:
 label artgallery:
 
     scene bg artgallery 
-    show L sidetalk at left
+    with fade
+    show L sh
     e "Wow, this place is amazing! I can't wait to see all the different kinds of art they have here!"
-    show L sidesmile at left
+    show L sds 
