@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 79: expected 'simple_expression' not found.
-    show L straighthappy at with dissolve
-                            ^
+File "game/script.rpy", line 45: keyword argument 'idle' appears more than once in a imagebutton statement.
+    idle SetVariable("ballet", None)
+        ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Tue Jun 23 16:24:34 2026
+Wed Jun 24 10:10:00 2026

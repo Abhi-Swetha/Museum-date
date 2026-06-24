@@ -30,23 +30,22 @@ image sea = "images/bg sea.png"
 image sunpencile = "images/bg sunpencile.png"
 image slime= "images/bg slime.png"
 image uravity = "images/bg uravity.png"
+
 # The game starts here.
 
 screen artgallerys():
     add "bg artgallery"
     modal True
 
-    imagebutton auto "art_option/ballet_%s.png":
+    imagebutton :
+        idle "art_options/ballet_idle.png"
+        hover "art_options/ballet_hover.png"
         focus_mask True
         hovered SetVariable("ballet", "ballet")
-        idle SetVariable("ballet", None)
-        action jump("ballet")
+        unhovered SetVariable("ballet", None)
+        action Jump("ballet")
 
-    imagebutton auto "art_option/candel_%s.png":
-        focus_mask True
-        hovered SetVariable("candel", "candel")
-        idle SetVariable("candel", None)
-        action jump("candel")
+
 
 default l = 0
 label start:
@@ -73,16 +72,25 @@ label start:
     show L closedhappy
     e"Half the fun of going to an art gallery is just looking at the art and seeing what you like and dont like! You dont have to know anything about art to enjoy it!"
     show L straightsmile
-    for i in range(1):
+
+    $ g=True
+
+    while g:
         show L straighthappy
         show L closedhappy
+        $ g=False
+        
     e"Still , i am happy you put so much thought into this, "
-    for i in range(1):
+    while not g:
         show L closedsmile
         show L sidesmile
         show L sidetalk
+        $ g=True
+
     e"and here i thought your confession was a mean prank you pulled, and you agreed to the date to clear your name "
+    show L sidesmile
     y"(;><)     \n Well, I expected as much when you agreed to date me if today went well, but I really wanted to ask you out on a date. I really like you, and I wanted to spend time with you..."
+    show L closedsmile
     y"i will prove it to you by making this date the best date ever!"
     show L straightsmile
     show L straighthappy
@@ -99,10 +107,12 @@ label start:
         "Look at the art first":
             y "Alright, lets go look at the art first!"
             $ l += 1
-            jump artgallery
+            jump artgallerys
         "Go eat first":
             y "Alright, lets go eat first!"
             jump food
+
+    return
 
 label food:
     scene bg room
