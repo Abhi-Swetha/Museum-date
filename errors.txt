@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 6: keyword argument repeated: image
+File "game/script.rpy", line 79: expected 'simple_expression' not found.
+    show L straighthappy at with dissolve
+                            ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Mon Jun 22 22:35:25 2026
+Tue Jun 23 16:24:34 2026
