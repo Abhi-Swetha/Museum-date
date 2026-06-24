@@ -36,9 +36,11 @@ default l = 0
 default h=0
 default x=1
 default art=0
+$ Basee =False
 
 $ global h
 $ global x
+$ global Basee
 
 screen artgallerys():
     add "bg artgallery"
@@ -112,7 +114,6 @@ screen artgallerys():
 label start:
     scene bg room
     with fade
-    
     show L straighthappy 
     y and e " hehe"
     e "I Can't believe we are finally here! This is going to be my next new favorite place!"
@@ -134,10 +135,8 @@ label start:
     e"Half the fun of going to an art gallery is just looking at the art and seeing what you like and dont like! You dont have to know anything about art to enjoy it!"
     show L straightsmile
     show L closedhappy
-    e"Still , i am happy you put so much thought into this, "
+    e"Still , i am happy you put so much thought into this , man "
     show L sidetalk
-        
-
     e"and here i thought your confession was a mean prank you pulled, and you agreed to the date to clear your name "
     show L sidesmile
     y"(;><)     \n Well, I expected as much when you agreed to date me if today went well, but I really wanted to ask you out on a date. I really like you, and I wanted to spend time with you..."
