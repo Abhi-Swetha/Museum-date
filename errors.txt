@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ ballet=True
-    ^
+File "game/script.rpy", line 85: 'else' is not a keyword argument or valid child of the screen statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Wed Jun 24 11:20:26 2026
+Wed Jun 24 16:28:50 2026

@@ -1,19 +1,44 @@
-2026-06-24 05:47:54 UTC
+2026-06-24 10:11:17 UTC
 macOS-26.5-arm64-arm-64bit
 Ren'Py 8.5.3.26051504
 
-Early init took 26 ms
-Loading error handling took 112 ms
-Loading script took 431 ms
+Early init took 27 ms
+Loading error handling took 87 ms
+Loading script took 471 ms
 Loading save slot metadata took 46 ms
 Loading persistent took 0 ms
 
-The label candel is defined twice, at File "game/candel.rpy", line 4:
-and File "game/candle.rpy", line 4:
-label candel:
-
+File "game/script.rpy", line 62: expected a keyword argument or child statement.
+    $ ballet = not ballet
+    ^
 DPI scale factor: 1.000000
-Interface start took 686 ms
+Interface start took 588 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(827, 461) drawable=(1654, 922)
+Maximum texture size: 4096x4096
+Resize event: <Event(65533-VIDEORESIZE h=461, mod=0, size=(827, 461), w=827)>
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 56 ms
+Loading script took 94 ms
+Loading save slot metadata took 7 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 62: expected a keyword argument or child statement.
+    $ ballet == True
+    ^
+DPI scale factor: 1.000000
+Interface start took 47 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1637, 1024)
@@ -26,17 +51,18 @@ Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 25
 Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 14 ms
-Loading error handling took 104 ms
-Loading script took 111 ms
+Early init took 15 ms
+Loading error handling took 103 ms
+4 script files skipped.
+Loading script took 120 ms
 Loading save slot metadata took 9 ms
 Loading persistent took 0 ms
 
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ballet=True
-    ^
+File "game/script.rpy", line 66: 'y' is not a keyword argument or valid child of the screen statement.
+    y"(didn't we already see that one?)"
+     ^
 DPI scale factor: 1.000000
-Interface start took 53 ms
+Interface start took 50 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1637, 1024)
@@ -49,17 +75,18 @@ Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 25
 Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 16 ms
-Loading error handling took 98 ms
-Loading script took 110 ms
-Loading save slot metadata took 9 ms
+Early init took 3 ms
+Loading error handling took 7 ms
+4 script files skipped.
+Loading script took 33 ms
+Loading save slot metadata took 7 ms
 Loading persistent took 0 ms
 
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ballet=True
-    ^
+File "game/script.rpy", line 66: 'y' is not a keyword argument or valid child of the screen statement.
+    y "(didn't we already see that one?)"
+     ^
 DPI scale factor: 1.000000
-Interface start took 48 ms
+Interface start took 47 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1637, 1024)
@@ -72,38 +99,64 @@ Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 25
 Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 2 ms
+Early init took 3 ms
 Loading error handling took 6 ms
-Loading script took 34 ms
-Loading save slot metadata took 8 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ballet=True
-    ^
-DPI scale factor: 1.000000
-Interface start took 49 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1637, 1024)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'Apple'
-Renderer: 'Apple A18 Pro'
-Version: '2.1 Metal - 90.5'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 2 ms
-Loading error handling took 5 ms
-Loading script took 26 ms
+4 script files skipped.
+Loading script took 29 ms
 Loading save slot metadata took 6 ms
 Loading persistent took 0 ms
 
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ballet=True
-    ^
+File "game/script.rpy", line 66: 'y' is not a keyword argument or valid child of the screen statement.
+    y "(didn't we already see that one?)"
+     ^
+DPI scale factor: 1.000000
+Interface start took 47 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+4 script files skipped.
+Loading script took 30 ms
+Loading save slot metadata took 6 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 66: 'y' is not a keyword argument or valid child of the screen statement.
+    y "(didn't we already see that one?)"
+     ^
+DPI scale factor: 1.000000
+Interface start took 46 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 15 ms
+Loading error handling took 100 ms
+4 script files skipped.
+Loading script took 113 ms
+Loading save slot metadata took 8 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 66: 'jump' is not a keyword argument or valid child of the screen statement.
+    jump alreadyseen
+        ^
 DPI scale factor: 1.000000
 Interface start took 48 ms
 
@@ -119,13 +172,62 @@ Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 3 ms
-Loading error handling took 6 ms
-Loading script took 28 ms
+Loading error handling took 5 ms
+4 script files skipped.
+Loading script took 29 ms
 Loading save slot metadata took 6 ms
 Loading persistent took 0 ms
 
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ ballet=True
+File "game/script.rpy", line 66: 'Jump' is not a keyword argument or valid child of the screen statement.
+    Jump ("alreadyseen")
+        ^
+DPI scale factor: 1.000000
+Interface start took 49 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+4 script files skipped.
+Loading script took 30 ms
+Loading save slot metadata took 7 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 66: 'action' is not a keyword argument or valid child of the screen statement.
+    action Jump ("alreadyseen")
+          ^
+DPI scale factor: 1.000000
+Interface start took 46 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 17 ms
+Loading error handling took 104 ms
+4 script files skipped.
+Loading script took 112 ms
+Loading save slot metadata took 8 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 56: Line is indented, but the preceding modal statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    imagebutton :
     ^
 DPI scale factor: 1.000000
 Interface start took 47 ms
@@ -143,12 +245,13 @@ Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 3 ms
 Loading error handling took 6 ms
-Loading script took 35 ms
-Loading save slot metadata took 7 ms
+4 script files skipped.
+Loading script took 30 ms
+Loading save slot metadata took 6 ms
 Loading persistent took 0 ms
 
-File "game/script.rpy", line 63: expected a keyword argument or child statement.
-    $ ballet=True
+File "game/script.rpy", line 56: Line is indented, but the preceding modal statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    imagebutton :
     ^
 DPI scale factor: 1.000000
 Interface start took 48 ms
@@ -163,6 +266,99 @@ Version: '2.1 Metal - 90.5'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1207, 809) drawable=(2414, 1618)
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+4 script files skipped.
+Loading script took 29 ms
+Loading save slot metadata took 5 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 56: Line is indented, but the preceding modal statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    imagebutton :
+    ^
+DPI scale factor: 1.000000
+Interface start took 49 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
 Maximum texture size: 4096x4096
-Resize event: <Event(65533-VIDEORESIZE h=809, mod=0, size=(1207, 809), w=1207)>
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+4 script files skipped.
+Loading script took 29 ms
+Loading save slot metadata took 6 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 62: expected a keyword argument or child statement.
+    $ ballet = True
+    ^
+DPI scale factor: 1.000000
+Interface start took 47 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+4 script files skipped.
+Loading script took 29 ms
+Loading save slot metadata took 6 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 62: expected a keyword argument or child statement.
+    $ art +=1
+    ^
+DPI scale factor: 1.000000
+Interface start took 48 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 14 ms
+Loading error handling took 95 ms
+4 script files skipped.
+Loading script took 120 ms
+Loading save slot metadata took 9 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 85: 'else' is not a keyword argument or valid child of the screen statement.
+    else:
+        ^
+DPI scale factor: 1.000000
+Interface start took 50 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1637, 1024)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Apple'
+Renderer: 'Apple A18 Pro'
+Version: '2.1 Metal - 90.5'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1637, 'current_h': 1024, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(819, 461) drawable=(1638, 922)
+Maximum texture size: 4096x4096
