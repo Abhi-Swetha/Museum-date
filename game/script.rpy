@@ -27,7 +27,7 @@ image field = "images/bg field.png"
 image invert = "images/bg invert.png"
 image invertpt2 = "images/bg invertpt2.png"
 image sea = "images/bg sea.png"
-image sunpencile = "images/bg sunpencile.png"
+image sunpencil = "images/bg sunpencil.png"
 image slime= "images/bg slime.png"
 image uravity = "images/bg uravity.png"
 
@@ -37,28 +37,8 @@ default h=0
 default x=1
 default art=0
 
-$ ballet=False
-$ candle=False
-$ field=False
-$ invert=False
-$ sea=False
-$ sunpencil=False
-$ slime=False
-$ uravity=False
-
 $ global h
 $ global x
-$ global art
-
-$ global ballet 
-$ global candle 
-$ global field 
-$ global invert 
-$ global sea 
-$ global sunpencil 
-$ global slime 
-$ global uravity 
-
 
 screen artgallerys():
     add "bg artgallery"
@@ -71,98 +51,61 @@ screen artgallerys():
         unhovered SetVariable("ballet", None)
         action Jump("b_c")
 
-    
     imagebutton :
-        auto "art_options/candel_%s.png"
+        auto "art_options/candle_%s.png"
         focus_mask True
-        hovered SetVariable("candel", "candel")
-        unhovered SetVariable("candel", None)
-        if not candle:
-            action Jump("candle")
-    else:
-        action Jump ("alreadyseen")
-
-
+        hovered SetVariable("candle", "candle")
+        unhovered SetVariable("candle", None)
+        action Jump ("c_c")
+        
     imagebutton :
         auto "art_options/field_%s.png"
         focus_mask True
         hovered SetVariable("field", "field")
         unhovered SetVariable("field", None)
-        if not field:
-            action Jump("field")
-    else:
-        action Jump ("alreadyseen")
+        action Jump("f_c")
 
-    if not inver:
-        $ invert = True
-        $ art +=1
-        imagebutton :
-            auto "art_options/invert_%s.png"
-            focus_mask True
-            hovered SetVariable("invert", "invert")
-            unhovered SetVariable("invert", None)
-            action Jump("invert")
-    else:
-        action Jump ("alreadyseen")
+    imagebutton :
+        auto "art_options/invert_%s.png"
+        focus_mask True
+        hovered SetVariable("invert", "invert")
+        unhovered SetVariable("invert", None)
+        action Jump("i_c")
 
-    if art >= 4:
-        $ l +=1
-        imagebutton :
-            auto "art_options/door_%s.png"
-            focus_mask True
-            hovered SetVariable("door", "door")
-            unhovered SetVariable("door", None)
-            action Jump("door")
-    else:
-        action Jump ("doorno")
+    imagebutton :
+        auto "art_options/door_%s.png"
+        focus_mask True
+        hovered SetVariable("door", "door")
+        unhovered SetVariable("door", None)
+        action Jump("door_c")
 
-    if not sea:
-        $ sea = True
-        $ art +=1
-        imagebutton :
-            auto "art_options/sea_%s.png"
-            focus_mask True
-            hovered SetVariable("sea", "sea")
-            unhovered SetVariable("sea", None)
-            action Jump("sea")
-    else:
-        action Jump ("alreadyseen")
+    imagebutton :
+        auto "art_options/sea_%s.png"
+        focus_mask True
+        hovered SetVariable("sea", "sea")
+        unhovered SetVariable("sea", None)
+        action Jump("S_c")
+ 
+    imagebutton :
+        auto "art_options/sunpencil_%s.png"
+        focus_mask True
+        hovered SetVariable("sunpencil", "sunpencil")
+        unhovered SetVariable("sunpencil", None)
+        action Jump("sp_c")
 
-    if not sunpencile:
-        $ sunpencile = True
-        $ art +=1
-        imagebutton :
-            auto "art_options/sunpencile_%s.png"
-            focus_mask True
-            hovered SetVariable("sunpencile", "sunpencile")
-            unhovered SetVariable("sunpencile", None)
-            action Jump("sunpencile")
-    else:
-        action Jump ("alreadyseen")
+    imagebutton :
+        auto "art_options/slime_%s.png"
+        focus_mask True
+        hovered SetVariable("slime", "slime")
+        unhovered SetVariable("slime", None)
+        action Jump("sl_c")
 
-    if not slime:
-        $ slime = True
-        $ art +=1
-        imagebutton :
-            auto "art_options/slime_%s.png"
-            focus_mask True
-            hovered SetVariable("slime", "slime")
-            unhovered SetVariable("slime", None)
-            action Jump("slime")
-    else:
-        action Jump ("alreadyseen")
-
-    if not uravity:
-        $ uravity = True
-        $ art +=1
-        imagebutton :
-            auto "art_options/uravity_%s.png"
-            focus_mask True
-            hovered SetVariable("uravity", "uravity")
-            unhovered SetVariable("uravity", None)
-            action Jump("uravity")
-    else:
-        action Jump ("alreadyseen")
+    imagebutton :
+        auto "art_options/uravity_%s.png"
+        focus_mask True
+        hovered SetVariable("uravity", "uravity")
+        unhovered SetVariable("uravity", None)
+        action Jump("u_c")
 
 label start:
     scene bg room
@@ -237,87 +180,111 @@ label food:
     scene bg room 
     jump artgallery
 
-label artgallerys:
+label artgallery:
     scene bg artgallery 
     with fade
     show L straighthappy 
     e "Wow, this place is amazing! I can't wait to see all the different kinds of art they have here!"
     show L straighttalk
 
+label artgallerys:
+    scene bg artgallery 
     call screen artgallerys 
 
 label alreadyseen:
         y "(didn't we already see that one?)"
         y "(lets choose smt else)"
-        jump artgallarys
+        jump artgallerys
 
 label doorno:
         y "(Right now?)"
         y "(lets go to eat after veiwing at least 4 artworks!)"
-        jump artgallarys
-
+        jump artgallerys
 
 #check if seen
+label door_c:
+        if art >= 4:
+            jump end
+        else:
+            y "(leave already??, we haven't even seen 4 artworks yet)"
+            y "(we can leave after a while)"
+            y "(lets see what artwork to look at next!)"
+            jump artgallerys
+
+$ b_see=False
+$ c_see=False
+$ f_see=False
+$ i_see=False
+$ s_see=False
+$ Sp=False
+$ Sl=False
+$ u_see =False
+
 label b_c:
-    if not ballet:
-        $ ballet = True
+    if not b_see:
+        $ b_see = True
         $ art +=1
         jump ballet
     else:
         jump alreadyseen
 
 label c_c:
-    if not candle:
-        $ candle = True
+    if not c_see:
+        $ c_see = True
         $ art +=1
         jump candle
     else:
         jump alreadyseen
 
 label f_c:
-    if not field:
-        $ field = True
+    if not f_see:
+        $ f_see = True
         $ art +=1
         jump field
     else:
         jump alreadyseen
 
 label i_c:
-    if not invert:
-        $ invert = True
+    if not i_see:
+        $ i_see = True
         $ art +=1
         jump invert
     else:
         jump alreadyseen
 
 label S_c:
-    if not sea:
-        $ sea = True
+    if not s_see:
+        $ s_see = True
         $ art +=1
         jump sea
     else:
         jump alreadyseen
 
 label sl_c:
-    if not slime:
-        $ slime = True
+    if not Sl:
+        $ Sl = True
         $ art +=1
         jump slime
     else:
         jump alreadyseen
 
 label sp_c:
-    if not sunpencil:
-        $ sunpencil = True
+    if not Sp:
+        $ Sp = True
         $ art +=1
         jump sunpencil
     else:
         jump alreadyseen
 
 label u_c:
-    if not uravity:
-        $ uravity = True
+    if not u_see:
+        $ u_see = True
         $ art +=1
         jump uravity
     else:
         jump alreadyseen    
+
+label end:
+    e"this the end"
+    "pp-[l]"
+    "mimimimimimimi"

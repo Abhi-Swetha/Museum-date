@@ -1,4 +1,4 @@
-zdefine e = Character("Laura",color="#ffeba9")
+define e = Character("Laura",color="#ffeba9")
 define y = Character("You", color="#ffffff")
 $ global h
 $ global x
