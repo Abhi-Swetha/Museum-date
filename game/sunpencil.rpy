@@ -6,14 +6,14 @@ $ global x
 label sunpencil:
     scene sunpencil
     with fade
-    e "Wow, this is beautiful! I love the way the ballerina is captured in mid-air. The colors are so vibrant and the movement is so graceful."
-    e"the ballerina dosent seem so happy though,"
-    e "I wonder what the artist was trying to convey with this painting. Maybe it's a commentary on the invisible struggles or ristricktion on those we admire?."
+    e "another pencile work?"
+    e"It is still really pretty"
+    e "I didn't expect these many pencil drawings tho..."
+    e"I wonder what this is trying to convey..."
     e"what do you think?"
 
     menu:
-        "hmmm.... ":
-            
+        "mmm.... ":    
             y"(shii.. i completely zoned out, but staying up late to reserve this place was worth it tho )"
             y"(you can push through it !)"
             y"('you gotta agree with everything the girl says'-how to get a girlfriend 101)"
@@ -25,10 +25,33 @@ label sunpencil:
             $ l += (x-h*0.25)
             $ h+=1
 
+            if h>=3:
+                e"are you alright? if you are tired we can sit and rest for a while"
+                y"yea, ofc! i am fine dont worry abt me dud-Laura"
+                e"..."
+                e"alright"
+
             if h>3:
                 e"but still dont you think there might be more to it?"
                 y"uhhh..."
                 y"(i think i may have seemed uninterseted, fak... )"
+                call spa
+                jump artgallerys
 
-
+        "freedom..?":
+            $ l +=2
+            call spa
             jump artgallerys
+    return
+
+label spa:
+    y"i Think it is trying to convey freedom ?"
+    e"why?"
+    y"the artwork seems rather rough on the sides"
+    y"The pencil stocks add to it"
+    e"so her being translusent is too convey she has become free?"
+    y"yesss"
+    e"ohhh~~"
+    e"makes sence makes sence!"
+    y"yesss,then shall we go to the next one?"
+    return

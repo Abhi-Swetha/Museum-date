@@ -53,6 +53,7 @@ label ballet:
             $ l+=2
             call ex
             jump artgallerys
+    return
 
 label ex:
     y"Actualy.. i think it might also apply to ourselves, like how we are controled by the invisible thread of socital rules and thoughts of how we might be persived"
@@ -66,5 +67,4 @@ label ex:
     "You and Laura" "This piece represents resstriction of a persons will!"
     y"i think.."
     e"i am sure there is a better way to phrase it but ehh, --\(`_`/--)"
-
-    
+    return

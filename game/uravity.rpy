@@ -7,9 +7,20 @@ label uravity:
     scene uravity
     with fade
     e "damn, This one's a pure master piece!"
-    y"god dang , yeaa! The artist must have poured their heart and soul into this"
+    y"god dang, yeaa! The artist must have poured their heart and soul into this"
+    e"the expresstion show clearly how she feels, man even I can feel the dispair through the page"
+    e"offfhhh.."
+    y"..."
+    e"what do think the experssion means? like one a more specific note"
+    e"I think the experssion seems deperate and dispaired"
+    y"what abt you?"
 
     menu:
+        "her expression..":
+            $ l+=2
+            call uax
+            jump artgallerys
+
         "... ":
             
             y"(shii.. i completely zoned out, but staying up late to reserve this place was worth it tho )"
@@ -35,20 +46,20 @@ label uravity:
                 y"(what did she ask? )"
                 y"(i think se asked smt abt the artist's motive? )"
                 call uax
-                e"so you {b}{i}DID{/b}{/i} think there was more to it! "
-                e"i thought you were nodding to everything i said cuz you were tired"
-                y"ofc ! Dude we have been friends for almost our entire lives, what makes you think {b}{i}I{/i}{/b} would be bored in an {i}Art exhibition!{/i}. -_- ?"
-                e"yea , you're right. hehehe"
                 e "lets go to the next one!"
                 $ h=1
                 jump artgallerys
-
-        "her expression..":
-            $ l+=2
-            call uax
-            jump artgallerys
+    return
 
 label uax:
-    y""
-
-    
+    y"her experssion seems more helpless than desperate"
+    e"huh? wait.."
+    e"yeaa i get waht you mean!"
+    y"btw doesn't she remind you of a character from an anime?"
+    e"oh yeaa! The one with the chubby cheeks!"
+    y"yeaa, Damn, I didn't expect to see an anime inspired character here"
+    e"me too, but still it looks really good!!"
+    y"I want see their other works, from anime now"
+    e"I guess you could check out their insta {b}{i}bumble_.b._{/i}{/b} or their yt {b}{i}Abhibi_lv1{/i}{/b}"
+    y"ohh , yess!!!"
+    return

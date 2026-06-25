@@ -7,7 +7,7 @@ label slime:
     scene slime
     with fade
     e "OMG! it looks so cuteeeee!!!"
-    e"I want to bit it!!!"
+    e"I want to bite it!!!"
     e "dhxgfsuixgaisfgi ugh! cuteness overload!"
     e "what do you think?"
 
@@ -26,6 +26,12 @@ label slime:
             $ l += (x-h*0.25)
             $ h+=1
 
+            if h>=3:
+                e"are you alright? if you are tired we can sit and rest for a while"
+                y"yea, ofc! i am fine dont worry abt me dud-Laura"
+                e"..."
+                e"alright"
+
             if h>3:
                 e"you sure?"
                 y"uhhh..."
@@ -35,6 +41,7 @@ label slime:
                 jump artgallerys
 
         "It does look cute af":
+            $ l+=2
             call slx
             jump artgallerys
     return

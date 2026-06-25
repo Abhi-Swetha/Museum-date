@@ -8,7 +8,7 @@ label candle:
     scene candle
     with fade
     e "i love the use of watercolor for the background!"
-    y "This is also really niceluy belnds the background with th echaracters"
+    y "This is also really nicely blends the background with the characters"
     e "it adds a lot of dimention and creates a soft vibe around the painting"
     y "i think the girl standing could have been drawn slightly better.."
     y"..."
@@ -50,6 +50,7 @@ label candle:
             $ l+=2
             call cax
             jump artgallerys
+    return
 
 label cax:
     y "yea...."
@@ -63,3 +64,4 @@ label cax:
     e" the artist has a way in drawing fabrics , that i love ! i have seen their work a lot in insta "
     y"really??"
     e"yea, they are called {b}bumble_.b._{/b}, you should check them out!!"
+    return

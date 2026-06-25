@@ -38,7 +38,7 @@ label sea:
                 y"(what did she ask? )"
                 y"(i think she asked smt abt the artist's motive? )"
                 call sax
-                e"so you {b}{i}DID{/b}{/i} think there was more to it! "
+                e"..."
                 e"i thought you were nodding to everything i said cuz you were tired"
                 y"ofc ! Dude we have been friends for almost our entire lives, what makes you think {b}{i}I{/i}{/b} would be bored in an {i}Art exhibition!{/i}. -_- ?"
                 e"yea , you're right. hehehe"
@@ -50,6 +50,8 @@ label sea:
             $ l+=2
             call sax
             jump artgallerys
+    return
+
 
 label sax:
     y "maybe that's the point?"
@@ -57,9 +59,10 @@ label sax:
     y "yeaaa... i really like it tho."
     y "its simple style and minimal coloring looks really good!"
     e "yea, i can almost feel the breeze through this piece"
-    e "the balletrina is still my fav,"
+    e "the ballerina is still my fav,"
     if base:
         e"Both the piece and the how the meaning is hinted by it are beutifull"
     else:
         e"lets go see it next !"
         $ Tim=True
+    return

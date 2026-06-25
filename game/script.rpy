@@ -15,13 +15,13 @@ image L sidesmile = "images/L sidesmile.png"
 image L sidehappy = "images/L sidehappy.png"
 image L closedsmile = "images/L closedsmile.png"
 image L closedhappy = "images/L closedhappy.png"
-image L straightblushhappy="images/ L straightblushhappy.png"
-image L straightnortalk="images/L straightnortalk.png"
-image L straightnor="images/L straightnor"
-image L closedblushhappy="images/L closedblushhappy"
-image L sidenortalk="images/L sidenortalk"
-image L downhappy="images/L downhappy"
-image L downtalk="images/L downtalk"
+image L straightblushhappy=im.Scale("images/ L straightblushhappy.png",1920,1080)
+image L straightnortalk="images/L straightcnortalk.png"
+image L straightnor="images/L straightnor.png"
+image L closedblushhappy=im.Scale("images/L closedblushhappy.png",1920,1080)
+image L sidenortalk="images/L sidenortalk.png"
+image L downhappy=im.Scale("images/L downhappy.png",1920,1080)
+image L downtalk=im.Scale("images/L downtalk.png",1920,1080)
 
 
 #all backgrounds
@@ -198,9 +198,8 @@ label artgallerys:
         show L closedhappy
         e"hehe, you are ryt!"
         jump end 
-
     call screen artgallerys 
-    
+    return
 
 label alreadyseen:
     y "(didn't we already see that one?)"
@@ -320,6 +319,7 @@ label end:
 
 label badend:
     scene bg mainplain
+    with fade
     show L sidehappy
     e"I-uhh, I first want to thank you for confessing to me..."
     show L sidetalk
