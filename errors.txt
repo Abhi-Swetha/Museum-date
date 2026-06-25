@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/uravity.rpy", line 10: unterminated string literal
-    y"god dang , yeaa! The artist must have poured their heart and soul into this
+File "game/script.rpy", line 122: 'return' is not a keyword argument or valid child of the screen statement.
+    return
+          ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Wed Jun 24 22:56:04 2026
+Thu Jun 25 14:47:11 2026

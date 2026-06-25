@@ -6,29 +6,56 @@ $ global x
 label slime:
     scene slime
     with fade
-    e "Wow, this is beautiful! I love the way the ballerina is captured in mid-air. The colors are so vibrant and the movement is so graceful."
-    e"the ballerina dosent seem so happy though,"
-    e "I wonder what the artist was trying to convey with this painting. Maybe it's a commentary on the invisible struggles or ristricktion on those we admire?."
-    e"what do you think?"
+    e "OMG! it looks so cuteeeee!!!"
+    e"I want to bit it!!!"
+    e "dhxgfsuixgaisfgi ugh! cuteness overload!"
+    e "what do you think?"
 
     menu:
-        "hmmm.... ":
+        "zzzzz..":
             
             y"(shii.. i completely zoned out, but staying up late to reserve this place was worth it tho )"
             y"(you can push through it !)"
             y"('you gotta agree with everything the girl says'-how to get a girlfriend 101)"
-            y"I am not sure, i am sure its whatever you said !"
+            y"yea totally! *yawn*"
+            y"(shit)\n ~(^.^)"
             e"oh..."
-            e"well... it could be just a simple painting..."
-            y"yeaa, definetly\n ;;-_- \n haha...."
+            e"are you sleepy?"
+            y"noooo,\n ;;-_- \n haha...."
 
             $ l += (x-h*0.25)
             $ h+=1
 
             if h>3:
-                e"but still dont you think there might be more to it?"
+                e"you sure?"
                 y"uhhh..."
-                y"(i think i may have seemed uninterseted, fak... )"
+                y"(... )"
+                e"..."
+                call slx
+                jump artgallerys
 
-
+        "It does look cute af":
+            call slx
             jump artgallerys
+    return
+
+label slx:
+    y "It looks cute af"
+    e"ofc, jus-just look at it !!!!"
+    e "aghhhhh!!!"
+    y"your weak against cute stuff huh?"
+    e"extremly"
+    y"what abt me?"
+    e"huh?"
+    y"i have called cute by quite a few people, myself"
+    y"don't you think i am cute?"
+    e">////<"
+    e"ye-yeah"
+    y"OoO"
+    y"O///o"
+    e"..."
+    y"..."
+    "...."
+    e"lets go to the next one..."
+    y"yeaa.."
+    return

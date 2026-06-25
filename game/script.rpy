@@ -4,6 +4,7 @@
 # name of the character.
 define e = Character("Laura",color="#ffeba9")
 define y = Character("You", color="#ffffff")
+define n = Character("",)
 
 #all sprites
 image L straighthappy = "images/L straighthappy.png"
@@ -14,8 +15,8 @@ image L sidesmile = "images/L sidesmile.png"
 image L sidehappy = "images/L sidehappy.png"
 image L closedsmile = "images/L closedsmile.png"
 image L closedhappy = "images/L closedhappy.png"
-image L straightblushhappy="images/ L straightblushhappy.png
-image L straightnortalk="images/L straightnortalk.png
+image L straightblushhappy="images/ L straightblushhappy.png"
+image L straightnortalk="images/L straightnortalk.png"
 image L straightnor="images/L straightnor"
 image L closedblushhappy="images/L closedblushhappy"
 image L sidenortalk="images/L sidenortalk"
@@ -49,7 +50,6 @@ default Tim=False
 $ global h
 $ global x
 $ global base
-
 
 screen artgallerys():
     add "bg artgallery"
@@ -178,6 +178,7 @@ label food:
     show L straighttalk 
     e"Alright...."
     jump artgallery
+    return
 
 label artgallery:
     scene bg artgallery 
@@ -185,27 +186,39 @@ label artgallery:
     show L straighthappy 
     e "Wow, this place is amazing! I can't wait to see all the different kinds of art they have here!"
     show L straighttalk
+    return
 
 label artgallerys:
-    scene bg artgallery 
-    call screen artgallerys 
+    scene bg artgallery
     if art >=8:
-        jump end
+        show L sidehappy
+        e"we finished seeing all the artworks,already?"
+        show L straightsmile
+        y"waht do you mean already?, its the evening! we came here during the afternoon"
+        show L closedhappy
+        e"hehe, you are ryt!"
+        jump end 
+
+    call screen artgallerys 
+    
 
 label alreadyseen:
-        y "(didn't we already see that one?)"
-        y "(lets choose smt else)"
-        jump artgallerys
+    y "(didn't we already see that one?)"
+    y "(lets choose smt else)"
+    jump artgallerys
+    return
 
 #check if seen
 label door_c:
-        if art >= 4:
-            jump end
-        else:
-            y "(leave already??, we haven't even seen 4 artworks yet)"
-            y "(we can leave after a while)"
-            y "(lets see what artwork to look at next!)"
-            jump artgallerys
+    if art >= 4:
+        jump end
+    else:
+        y "(leave already??, we haven't even seen 4 artworks yet)"
+        y "(we can leave after a while)"
+        y "(lets see what artwork to look at next!)"
+        jump artgallerys
+    return
+        
 
 default b_see=False
 default c_see=False
@@ -223,6 +236,7 @@ label b_c:
         jump ballet
     else:
         jump alreadyseen
+    return
 
 label c_c:
     if not c_see:
@@ -231,6 +245,7 @@ label c_c:
         jump candle
     else:
         jump alreadyseen
+    return
 
 label f_c:
     if not f_see:
@@ -239,6 +254,7 @@ label f_c:
         jump field
     else:
         jump alreadyseen
+    return
 
 label i_c:
     if not i_see:
@@ -247,6 +263,7 @@ label i_c:
         jump invert
     else:
         jump alreadyseen
+    return
 
 label S_c:
     if not s_see:
@@ -255,6 +272,7 @@ label S_c:
         jump sea
     else:
         jump alreadyseen
+    return
 
 label sl_c:
     if not Sl:
@@ -263,6 +281,7 @@ label sl_c:
         jump slime
     else:
         jump alreadyseen
+    return
 
 label sp_c:
     if not Sp:
@@ -271,6 +290,7 @@ label sp_c:
         jump sunpencil
     else:
         jump alreadyseen
+    return
 
 label u_c:
     if not u_see:
@@ -279,6 +299,7 @@ label u_c:
         jump uravity
     else:
         jump alreadyseen    
+    return
 
 label end:
     scene bg artgallery
@@ -292,62 +313,71 @@ label end:
     y"Its fine,I asked you out anyway..."
     y"soo...?"
     if l >=12:
-        scene bg mainplain
-        show L sidehappy
-        e"I-uhh, I first want to thank you for confessing to me..."
-        show L sidetalk
-        e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
-        show L straightnortalk
-        e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
-        show L straightnor
-        y"...."
-        show L straightsmile
-        y"I see-"
-        show L downtalk
-        e"-That being said, if {b}you{/b} are okey with it..."
-        e"I would like us to keep hanging out like this, not as friends but something more..."
-        show L downhappy
-        e"because, today felt like every other time we have hung out, it was fun and comfortable yes, but didn't feel like a date.."
-        show L straightblushhappy
-        e"I belive we can make it work, but i want to approch it as a proper date"
-        show L closedblushhappy
-        e"soo what do you think?, i know this is not a proper answer but..."
-        e"i wanna try and make this work..."
-        
-
+        jump goodend
     else:
-        scene bg mainplain
-        show L sidehappy
-        e"I-uhh, I first want to thank you for confessing to me..."
-        show L sidetalk
-        e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
-        show L straightnortalk
-        e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
-        show L straightnor
-        y"oh..."
-        show L sidenortalk
-        e"I know you feelings are genuine, which is why i don't want to give you false hope."
-        show L straightnortalk
-        e"I don't think I can accept you confession, because i don't feel the same way"
-        y"I see,(｡·́︿·̀｡)"
-        y"I mean i expected it but, still ..(╥﹏╥)"
-        y"Still,"
-        show L sidesmile
-        y"do you think we can continue being friends?"
-        show L sidenortalk
-        e"Ofc, But..."
-        show L sidetalk
-        e"Not for now, not until you get over me..."
-        show L straighttalk
-        e"as I said before I don't want to give you false hope"
-        show L straightnor
-        y"yes..."
-        y"I understand, Thank you for considering my feelings. But ..."
-        show L straightsmile
-        y"don't worry, when i feel ready i will talk to you myself"
-        show L straighthappy
-        e"then i will be waiting"
-        scene black
-         
+        jump badend
+    return
 
-        
+label badend:
+    scene bg mainplain
+    show L sidehappy
+    e"I-uhh, I first want to thank you for confessing to me..."
+    show L sidetalk
+    e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
+    show L straightnortalk
+    e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
+    show L straightnor
+    y"oh..."
+    show L sidenortalk
+    e"I know you feelings are genuine, which is why i don't want to give you false hope."
+    show L straightnortalk
+    e"I don't think I can accept you confession, because i don't feel the same way"
+    y"I see,(｡·́︿·̀｡)"
+    y"I mean i expected it but, still ..(╥﹏╥)"
+    y"Still,"
+    show L sidesmile
+    y"do you think we can continue being friends?"
+    show L sidenortalk
+    e"Ofc, But..."
+    show L sidetalk
+    e"Not for now, not until you get over me..."
+    show L straighttalk
+    e"as I said before I don't want to give you false hope"
+    show L straightnor
+    y"yes..."
+    y"I understand, Thank you for considering my feelings. But ..."
+    show L straightsmile
+    y"don't worry, when i feel ready i will talk to you myself"
+    show L straighthappy
+    e"then i will be waiting"
+    scene black
+    $ persistent.bad_end = True 
+    centered "BAD END" 
+    return
+
+label goodend:
+    scene bg mainplain
+    show L sidehappy
+    e"I-uhh, I first want to thank you for confessing to me..."
+    show L sidetalk
+    e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
+    show L straightnortalk
+    e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
+    show L straightnor
+    y"...."
+    show L straightsmile
+    y"I see-"
+    show L downtalk
+    e"-That being said, if {b}you{/b} are okey with it..."
+    e"I would like us to keep hanging out like this, not as friends but something more..."
+    show L downhappy
+    e"because, today felt like every other time we have hung out, it was fun and comfortable yes, but didn't feel like a date.."
+    show L straightblushhappy
+    e"I belive we can make it work, but i want to approch it as a proper date"
+    show L closedblushhappy
+    e"soo what do you think?, i know this is not a proper answer but..."
+    e"i wanna try and make this work..."
+    scene black
+    $ persistent.good_end = True
+    centered "GOOD END"
+    return

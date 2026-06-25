@@ -49,6 +49,6 @@ label uravity:
             jump artgallerys
 
 label uax:
-    ""
+    y""
 
     
