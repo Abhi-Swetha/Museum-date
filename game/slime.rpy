@@ -38,12 +38,12 @@ label slime:
                 y"(... )"
                 e"..."
                 call slx
-                jump artgallerys
+                
 
         "It does look cute af":
             $ l+=2
             call slx
-            jump artgallerys
+    jump artgallerys        
     return
 
 label slx:

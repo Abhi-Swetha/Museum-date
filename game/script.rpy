@@ -122,18 +122,7 @@ screen artgallerys():
 
 label start:
     scene black
-    centered "Would you like to have the points be displayed at the top?\nThis may ruin the game experience and suspensce."
-    menu Points:
-        
-        "Yes! I want to see the amt of points i have!":
-            while True:
-                "Current points = [l]"
-                jump start1
-        "No, I want to Play normally!":
-            jump start1
-
-label start1:
-           
+    centered "You just confesses to your childhood friend, Laura Jane, \n and both have you decided to go on a date together after which she will give her answer based on how the date went. "
     scene bg room
     with fade
     show L straighthappy 
@@ -190,8 +179,10 @@ label food:
     scene bg room
     show L straighttalk 
     e"Alright...."
+    scene black
+    centered"You and Laura both go and eat a hearthy meal, and come back.\nBoth of enter the Art gallery Room"
     jump artgallery
-    return
+    
 
 label artgallery:
     scene bg artgallery 
@@ -199,7 +190,8 @@ label artgallery:
     show L straighthappy 
     e "Wow, this place is amazing! I can't wait to see all the different kinds of art they have here!"
     show L straighttalk
-    return
+    jump artgallerys
+    
 
 label artgallerys:
     scene bg artgallery
@@ -211,8 +203,8 @@ label artgallerys:
         show L closedhappy
         e"hehe, you are ryt!"
         jump end 
+
     call screen artgallerys 
-    return
 
 label alreadyseen:
     y "(didn't we already see that one?)"
@@ -395,4 +387,3 @@ label goodend:
     $ persistent.good_end = True
     centered "GOOD END"
     return
-

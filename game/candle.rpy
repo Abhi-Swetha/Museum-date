@@ -44,12 +44,12 @@ label candle:
                 e"yea , you're right. hehehe"
                 e "lets go to the next one!"
                 $ h=1
-                jump artgallerys
+                
 
         "yeaa.....":
             $ l+=2
             call cax
-            jump artgallerys
+    jump artgallerys       
     return
 
 label cax:

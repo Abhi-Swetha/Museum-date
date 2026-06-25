@@ -19,7 +19,7 @@ label uravity:
         "her expression..":
             $ l+=2
             call uax
-            jump artgallerys
+            
 
         "... ":
             
@@ -48,7 +48,7 @@ label uravity:
                 call uax
                 e "lets go to the next one!"
                 $ h=1
-                jump artgallerys
+    jump artgallerys            
     return
 
 label uax:

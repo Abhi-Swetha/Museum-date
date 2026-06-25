@@ -47,12 +47,12 @@ label ballet:
                 e"yea , you're right. hehehe"
                 e "lets go to the next one!"
                 $ h=1
-                jump artgallerys
+                
 
         "Actually..." :
             $ l+=2
             call ex
-            jump artgallerys
+    jump artgallerys        
     return
 
 label ex:

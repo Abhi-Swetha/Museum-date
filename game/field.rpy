@@ -15,7 +15,7 @@ label field:
         "explain how it feels to you":
             $ l+=2
             call fex
-            jump artgallerys
+            
 
         "not suree":
             y"I am not sure...."
@@ -44,7 +44,7 @@ label field:
                 e"yea , you're right. hehehe"
                 e "lets go to the next one!"
                 $ h=1
-                jump artgallerys
+    jump artgallerys            
     return
         
 label fex:

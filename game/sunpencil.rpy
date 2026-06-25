@@ -36,13 +36,14 @@ label sunpencil:
                 y"uhhh..."
                 y"(i think i may have seemed uninterseted, fak... )"
                 call spa
-                jump artgallerys
+                
 
         "freedom..?":
             $ l +=2
             call spa
-            jump artgallerys
+    jump artgallerys       
     return
+    
 
 label spa:
     y"i Think it is trying to convey freedom ?"
@@ -54,4 +55,3 @@ label spa:
     e"ohhh~~"
     e"makes sence makes sence!"
     y"yesss,then shall we go to the next one?"
-    return

@@ -44,12 +44,12 @@ label sea:
                 e"yea , you're right. hehehe"
                 e "lets go to the next one!"
                 $ h=1
-                jump artgallerys
+                
 
         "it's simple..":
             $ l+=2
             call sax
-            jump artgallerys
+    jump artgallerys        
     return
 
 

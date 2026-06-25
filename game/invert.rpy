@@ -14,7 +14,7 @@ label invert:
         "go see the fliped version":
             $ l +=2
             call iax
-            jump artgallerys
+            
 
         "hmmm.... ":
             
@@ -34,7 +34,7 @@ label invert:
                 y"uhhh..."
                 y"(i think i may have seemed uninterseted, fak... )"
                 call iax
-                jump artgallerys
+    jump artgallerys            
     return
 
 label  iax:
