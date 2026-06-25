@@ -3,8 +3,7 @@ define y = Character("You", color="#ffffff")
 
 $ global h
 $ global x
-$ global Basee
-$ Basee=True
+$ global base
 $ global Tim
 label ballet:
     if Tim:
@@ -37,7 +36,7 @@ label ballet:
             if h>3:
                 e"are you sure ?"
                 y"uhhh..."
-                y"(i think se asked smt abt the paintin's meaning )"
+                y"(i think she asked smt abt the paintin's meaning )"
                 call ex
                 e"so you {b}{i}DID{/b}{/i} think there was more to it! "
                 e"i thought you were nodding to everything i said cuz you were tired"

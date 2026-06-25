@@ -8,6 +8,7 @@ label invert:
     with fade
     e "Wow, this is beautiful! the composition is also really good!"
     e"ohh! they have the fliped version as well!!"
+    e"do you wanna go see it?"
 
     menu:
         "hmmm.... ":
@@ -27,20 +28,19 @@ label invert:
                 e"but still dont you think there might be more to it?"
                 y"uhhh..."
                 y"(i think i may have seemed uninterseted, fak... )"
-
-
-            jump artgallerys
+                call iax
+                jump artgallerys
 
         "go see the fliped version":
             $ l +=2
-            scene invertpt2
-            with fade
-            e "wow, i can see the details in the girl so much better now !"
-            y "yea, your ryt,"
-            y "....."
-            y "do-do you think that c-could be us?"
-            y">///<"
-            e "I , i am not sure,but i promised i would tell you at the end "
-            e"^///^"
-
             jump artgallerys
+label  iax:
+    scene invertpt2
+    with fade
+    e "wow, i can see the details in the girl so much better now !"
+    y "yea, your ryt,"
+    y "....."
+    y "do-do you think that c-could be us?"
+    y">///<"
+    e "I , i am not sure,but i promised i would tell you at the end "
+    e"^///^"

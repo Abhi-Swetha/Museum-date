@@ -14,6 +14,13 @@ image L sidesmile = "images/L sidesmile.png"
 image L sidehappy = "images/L sidehappy.png"
 image L closedsmile = "images/L closedsmile.png"
 image L closedhappy = "images/L closedhappy.png"
+image L straightblushhappy="images/ L straightblushhappy.png
+image L straightnortalk="images/L straightnortalk.png
+image L straightnor="images/L straightnor"
+image L closedblushhappy="images/L closedblushhappy"
+image L sidenortalk="images/L sidenortalk"
+image L downhappy="images/L downhappy"
+image L downtalk="images/L downtalk"
 
 
 #all backgrounds
@@ -36,11 +43,13 @@ default l = 0
 default h=0
 default x=1
 default art=0
-$ Basee =False
+default base=False
+default Tim=False
 
 $ global h
 $ global x
-$ global Basee
+$ global base
+
 
 screen artgallerys():
     add "bg artgallery"
@@ -115,7 +124,6 @@ label start:
     scene bg room
     with fade
     show L straighthappy 
-    y and e " hehe"
     e "I Can't believe we are finally here! This is going to be my next new favorite place!"
     show L straightsmile 
 
@@ -129,6 +137,7 @@ label start:
 
     show L straighttalk
     y"This time its also completely new artworks from the last time I was here...>///<"
+    show L closedsmile
     y"i thought it would be cool if i seemed like i knew what i was talking about, but i really dont know much about art"
     show L straightsmile
     show L closedhappy
@@ -168,7 +177,6 @@ label food:
     scene bg room
     show L straighttalk 
     e"Alright...."
-    scene bg room 
     jump artgallery
 
 label artgallery:
@@ -181,15 +189,12 @@ label artgallery:
 label artgallerys:
     scene bg artgallery 
     call screen artgallerys 
+    if art >=8:
+        jump end
 
 label alreadyseen:
         y "(didn't we already see that one?)"
         y "(lets choose smt else)"
-        jump artgallerys
-
-label doorno:
-        y "(Right now?)"
-        y "(lets go to eat after veiwing at least 4 artworks!)"
         jump artgallerys
 
 #check if seen
@@ -276,6 +281,73 @@ label u_c:
         jump alreadyseen    
 
 label end:
-    e"this the end"
-    "pp-[l]"
-    "mimimimimimimi"
+    scene bg artgallery
+    show L sidehappy
+    e"I didn't realise so much time had passed ! today was really fun!"
+    show L straightsmile
+    y"I had a lot of Fun too"
+    show L straighthappy
+    e"Thank you for taking me out"
+    show L sidesmile
+    y"Its fine,I asked you out anyway..."
+    y"soo...?"
+    if l >=12:
+        scene bg mainplain
+        show L sidehappy
+        e"I-uhh, I first want to thank you for confessing to me..."
+        show L sidetalk
+        e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
+        show L straightnortalk
+        e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
+        show L straightnor
+        y"...."
+        show L straightsmile
+        y"I see-"
+        show L downtalk
+        e"-That being said, if {b}you{/b} are okey with it..."
+        e"I would like us to keep hanging out like this, not as friends but something more..."
+        show L downhappy
+        e"because, today felt like every other time we have hung out, it was fun and comfortable yes, but didn't feel like a date.."
+        show L straightblushhappy
+        e"I belive we can make it work, but i want to approch it as a proper date"
+        show L closedblushhappy
+        e"soo what do you think?, i know this is not a proper answer but..."
+        e"i wanna try and make this work..."
+        
+
+    else:
+        scene bg mainplain
+        show L sidehappy
+        e"I-uhh, I first want to thank you for confessing to me..."
+        show L sidetalk
+        e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
+        show L straightnortalk
+        e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
+        show L straightnor
+        y"oh..."
+        show L sidenortalk
+        e"I know you feelings are genuine, which is why i don't want to give you false hope."
+        show L straightnortalk
+        e"I don't think I can accept you confession, because i don't feel the same way"
+        y"I see,(｡·́︿·̀｡)"
+        y"I mean i expected it but, still ..(╥﹏╥)"
+        y"Still,"
+        show L sidesmile
+        y"do you think we can continue being friends?"
+        show L sidenortalk
+        e"Ofc, But..."
+        show L sidetalk
+        e"Not for now, not until you get over me..."
+        show L straighttalk
+        e"as I said before I don't want to give you false hope"
+        show L straightnor
+        y"yes..."
+        y"I understand, Thank you for considering my feelings. But ..."
+        show L straightsmile
+        y"don't worry, when i feel ready i will talk to you myself"
+        show L straighthappy
+        e"then i will be waiting"
+        scene black
+         
+
+        

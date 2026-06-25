@@ -2,9 +2,8 @@ define e = Character("Laura",color="#ffeba9")
 define y = Character("You", color="#ffffff")
 $ global h
 $ global x
-$ Tim=False
 $ global Tim
-
+$ global base
 label sea:
     scene sea
     with fade
@@ -37,7 +36,7 @@ label sea:
                 e"are you sure you are alright?"
                 y"uhhh...yeaa, I-sorry, I just zoned out"
                 y"(what did she ask? )"
-                y"(i think se asked smt abt the artist's motive? )"
+                y"(i think she asked smt abt the artist's motive? )"
                 call sax
                 e"so you {b}{i}DID{/b}{/i} think there was more to it! "
                 e"i thought you were nodding to everything i said cuz you were tired"
@@ -52,15 +51,14 @@ label sea:
             call sax
             jump artgallerys
 
-$ global Basee
 label sax:
-    y"maybe that's the point?"
-    e"it's simplisity does make it stand out..."
-    y"yeaaa... i really like it tho."
-    y"its simple style and minimal coloring looks really good!"
-    e"yea, i can almost feel the breeze through this piece"
-    e"the balletrina is still my fav,"
-    if Basee:
+    y "maybe that's the point?"
+    e "it's simplisity does make it stand out..."
+    y "yeaaa... i really like it tho."
+    y "its simple style and minimal coloring looks really good!"
+    e "yea, i can almost feel the breeze through this piece"
+    e "the balletrina is still my fav,"
+    if base:
         e"Both the piece and the how the meaning is hinted by it are beutifull"
     else:
         e"lets go see it next !"

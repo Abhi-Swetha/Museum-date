@@ -1,37 +1,37 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 118, in script
-    y and e " hehe"
-Exception: Say has image attributes ('and', 'e'), but there's no image tag associated with the speaking character.
+  File "game/sea.rpy", line 51, in script call
+    call sax
+  File "game/sea.rpy", line 61, in script
+    if Basee:
+  File "game/sea.rpy", line 61, in <module>
+    if Basee:
+       ^^^^^ 
+NameError: name 'Basee' is not defined. Did you mean: 'base'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 118, in script
-    y and e " hehe"
-  File "renpy/ast.py", line 2935, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 994, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/sayexports.py", line 129, in say
-    who(what, *args, **kwargs)
-    ~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1503, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1321, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^ 
-  File "renpy/character.py", line 1249, in resolve_say_attributes
-    raise Exception(
-    ...<2 lines>...
-    )
-Exception: Say has image attributes ('and', 'e'), but there's no image tag associated with the speaking character.
+  File "game/sea.rpy", line 51, in script call
+    call sax
+  File "game/sea.rpy", line 61, in script
+    if Basee:
+  File "renpy/ast.py", line 2089, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/sea.rpy", line 61, in <module>
+    if Basee:
+       ^^^^^ 
+NameError: name 'Basee' is not defined. Did you mean: 'base'?
 
 macOS-26.5-arm64-arm-64bit arm64
 Ren'Py 8.5.3.26051504
 gushing abt my fav panels from mhanwas 1.0
-Wed Jun 24 22:56:15 2026
+Thu Jun 25 11:59:42 2026
