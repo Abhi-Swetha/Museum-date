@@ -3,8 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Laura",color="#ffeba9")
-define y = Character("You", color="#ffffff")
-define n = Character("",)
+define y = Character("You", color="#7d5ba9")
+define both = Character("You and Laura",color="#8595d1ff")
 
 #all sprites
 image L straighthappy = "images/L straighthappy.png"
@@ -121,6 +121,21 @@ screen artgallerys():
         action Jump("u_c")
 
 label start:
+    label test:
+
+        e "Why don't you visit {a=https://renpy.org}Ren'Py's home page{/a}?"
+
+        e "Or {a=jump:more_text}here for more info{/a}."
+
+        return
+
+    label more_text:
+
+        e "In Hot Springs, Arkansas, there's a statue of Al Capone you can take a picture with."
+
+        e "That's more info, but not the kind you wanted, is it?"
+
+        return
     scene black
     centered "You just confesses to your childhood friend, Laura Jane, \n and both have you decided to go on a date together after which she will give her answer based on how the date went. "
     scene bg room
@@ -380,11 +395,35 @@ label badend:
     scene black
     with fade
     pause(0.5)
-    centered"It takes you a couple of months to get over the rejection and a few more before you could face Laura without the lingering feelings..."
-    centered" You go on with your life just as she has, and after almost Two years you ask her out to a drink, this time as a friend"
-    
+    centered"It takes you a couple of months to get over the rejection and \n\na few more before you could face Laura without the lingering feelings..."
+    centered"Both of you get buzy with life and after almost 5 years you ask her out to a drink,\n\n this time as a friend"
+    #scene bg badend with fade 
+    #with pause (0.5)
+    e"took you long enough to contact me again"
+    y"Moving on from your first love is harder than you think... (;-n-)"
+    y"its even harder to get rid of the lingering feeling,haaa......"
+    y"btw congrats on getting engaged! I heard you got proposed on the same day you got your promotion"
+    e"oh, YES!!! That is officially the happiest day of my life!!!"
+    e"Ahh...That was the first time i cried tears of joy (ꈍᴗꈍ)♡"
+    e"I heard you got a girlfrienddd~!, who is the lucky girl??"
+    e"I saw her on insta, how did you bag such a badddie?"
+    y"Hey!! \n(>///<)\nwell Shraya,my girlfriend was the one who confessed to me..."
+    y"and to be honest, i thought i was dreaming, and it was just around the time i had gotton open to dating again"
+    y"so I said yes, and I have grown to love her a {b}LOT{/b}"
+    y"don't tell her but, I am planning on proposeing to her on our 3rd year anniversary...(ᴗ͈ˬᴗ͈)ഒ"
+    e"(,,>ヮ<,,) eekkkk!"
+    e"...."
+    y"..."
+    e"A lot can change in 4 years, huh?"
+    y"yea,"
+    e"let's toast to that?"
+    y"and for your engaement!"
+    e"and for {i}you{/i} proposing to your girlfriend!"
+    e"ready?"
+    y"ready as I will ever be!""
+    centered "{size=90}CHEERS!!!!!" 
     $ persistent.bad_end = True 
-    centered "✦•┈⋅⋯ ⋯⋅┈•✦\n\nBAD END\n\n✦•┈⋅⋯ ⋯⋅┈•✦" 
+    centered "✦•┈⋅⋯ ⋯⋅┈•✦\n\FRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦" 
     return
 
 label goodend:
