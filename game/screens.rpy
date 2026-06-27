@@ -245,7 +245,6 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
             style "quick_menu"
-
             #textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
@@ -293,32 +292,34 @@ screen navigation():
         style_prefix "navigation"
 
         xalign 0.5
-        yalign 0.92 
+        yalign 0.97 
 
-        spacing 66
+        spacing 5
 
         if main_menu:
             
             imagebutton:
+                xoffset -70
+                yoffset -47
                 idle im.Scale("start1_idle.png",100,100)
                 hover im.Scale("start1_hover.png",100,100)
                 action Start()
 
         else:
-
+            yoffset -50
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
         
 
         hbox:
-            spacing -67
+            spacing -64
             textbutton _("Load") action ShowMenu("load")
             hbox:
                 
                 textbutton _("Preferences") action ShowMenu("preferences")
                 hbox:
-                    spacing -78
+                    spacing -70
                     if renpy.variant("pc"):
                         ## The quit button is banned on iOS and unnecessary on Android and
                         ## Web.
@@ -513,15 +514,6 @@ screen main_menu():
                         text_color "#262626"
                         text_hover_color "#8a1f1f"
 
-#                    textbutton "Album":
-#                        # TODO: point this at your own gallery/CG-room screen,
-#                        # e.g. action ShowMenu("gallery")
-#                        action NullAction()
-#                        text_font "font/YoungSerif-Bold.ttf"
-#                        text_size 38
-#                        text_color "#262626"
-#                        text_hover_color "#8a1f1f"0
-
                 hbox:
                     xanchor 0.6
                     xpos 500
@@ -605,7 +597,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background "game_menu2.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -1000,9 +992,9 @@ screen history():
 
     ## Avoid predicting this screen, as it can be very large.
     predict False
-
+    
     use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
-
+        
         style_prefix "history"
 
         for h in _history_list:
@@ -1726,7 +1718,7 @@ style slider_slider:
 
 screen endings():
     tag menu
-    use game_menu(_("Endings"), scroll="viewport"):
+    use game_menu(_("Album<3")):
         vbox:
             if persistent.good_end:
                 label _("Good End")
