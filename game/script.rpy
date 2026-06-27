@@ -121,26 +121,12 @@ screen artgallerys():
         action Jump("u_c")
 
 label start:
-    label test:
-
-        e "Why don't you visit {a=https://renpy.org}Ren'Py's home page{/a}?"
-
-        e "Or {a=jump:more_text}here for more info{/a}."
-
-        return
-
-    label more_text:
-
-        e "In Hot Springs, Arkansas, there's a statue of Al Capone you can take a picture with."
-
-        e "That's more info, but not the kind you wanted, is it?"
-
-        return
     scene black
     centered "You just confesses to your childhood friend, Laura Jane, \n and both have you decided to go on a date together after which she will give her answer based on how the date went. "
     scene bg room
-    with fade
     show L straighthappy 
+    with fade
+    pause(0.5)
     e "I Can't believe we are finally here! This is going to be my next new favorite place!"
     show L straightsmile 
 
@@ -179,7 +165,12 @@ label start:
     e"but What do you wanna do first? look at the art or go eat?"
     show L straightsmile
     with Pause(0.5)
-    show L straightsmile at left
+    transform left2:
+        xanchor 0.5
+        xpos 0.3
+        yanchor 1.0
+        ypos 1.0
+    show L straightsmile at left2
     with move
     pause (0.5)
     
@@ -214,8 +205,8 @@ label artgallery:
     scene black
     centered"You and Laura both enter the Art gallery Room"
     scene bg artgallery 
-    with fade
     show L straighthappy
+    with fade
     pause(0.5)
     e "Wow, this place is amazing! I can't wait to see all the different kinds of art they have here!"
     e"which art work do you wanna see first?"
@@ -360,7 +351,7 @@ label end:
 label badend:
     scene bg mainplain
     show L straightnor
-    with fade 
+    with dissolve 
     pause(0.7)
     show L straightnortalk
     e"I-uhh, I first want to thank you for confessing to me..."
@@ -403,27 +394,27 @@ label badend:
     y"Moving on from your first love is harder than you think... (;-n-)"
     y"its even harder to get rid of the lingering feeling,haaa......"
     y"btw congrats on getting engaged! I heard you got proposed on the same day you got your promotion"
-    e"oh, YES!!! That is officially the happiest day of my life!!!"
-    e"Ahh...That was the first time i cried tears of joy (ꈍᴗꈍ)♡"
+    e"oh, YES!!! That is officially the {i}happiest{/i} day of my life!!!"
+    e"Ahh...That was the first time i cried tears of joy (>ᴗ<)♡"
     e"I heard you got a girlfrienddd~!, who is the lucky girl??"
     e"I saw her on insta, how did you bag such a badddie?"
     y"Hey!! \n(>///<)\nwell Shraya,my girlfriend was the one who confessed to me..."
     y"and to be honest, i thought i was dreaming, and it was just around the time i had gotton open to dating again"
     y"so I said yes, and I have grown to love her a {b}LOT{/b}"
-    y"don't tell her but, I am planning on proposeing to her on our 3rd year anniversary...(ᴗ͈ˬᴗ͈)ഒ"
+    y"don't tell her but, I am planning on proposeing to her on our 3rd year anniversary...(ᴗ͈ˬᴗ͈)!"
     e"(,,>ヮ<,,) eekkkk!"
     e"...."
     y"..."
-    e"A lot can change in 4 years, huh?"
+    e"A lot can change in 5 years, huh?"
     y"yea,"
     e"let's toast to that?"
     y"and for your engaement!"
     e"and for {i}you{/i} proposing to your girlfriend!"
     e"ready?"
-    y"ready as I will ever be!""
+    y"ready as I will ever be!"
     centered "{size=90}CHEERS!!!!!" 
     $ persistent.bad_end = True 
-    centered "✦•┈⋅⋯ ⋯⋅┈•✦\n\FRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦" 
+    centered "✦•┈⋅⋯ ⋯⋅┈•✦\n\nFRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦" 
     return
 
 label goodend:
@@ -453,6 +444,44 @@ label goodend:
     e"soo what do you think?, i know this is not a proper answer but..."
     e"i wanna try and make this work..."
     scene black
+    with fade
+    pause(0.5)
+    centered "you guys go on a second date to an Rock Climbing studio, This felt more like your usual hang out then the Art exhibition date,\n\nBut maybe thats not so bad? "
+    centered "Through the second date you both got closer, after which you went on 3 more diffrents date with her, each one getting more fun than before..."
+    centered "before long both of you had gotten closer, and the initial akwardness was no where to be seen\n\nYou decided to ask her out again...at 8 in the night\n\n both you meet at a park near her house."
+    centered "seems that Laura had also thought the same thing and both you end up confessing to each other at the same time."
+    #scene bg park
+    #with fade
+    #pause (0.5)
+    e"I never thought i would ever fall in love with the most cowardly, nerdy guy i knew..."
+    y"and I never thought i would fall in love with the most unrully reckless girl i knew.."
+    e"but people change, and with those changes come new feelings"
+    y"and sometimes, no matter how someone changes you can't help but love them.."
+    "..."
+    centered "To be honest, there was no flying flower petals or fireworks, not even stars... "
+    centered "But that park with its floresent street light shinging down on Laura, was the most beutifull sight you jad seen in your life"
+    #show bg goodend
+    #with fade
+    #pause (0.5)
+    e"I love you..."
+    y"I love you too"
+    e"(｡•́‿  •̀｡)"
+    y"(｡´ ‿｀♡)"
+    e"(´｡• ᵕ •｡`)"
+    scene black with fade
+    pause (0.5)
+    centered "Years go by in an instant. You both of you had your ups and downs, soon your six year annniversry is coming..."
+    y"Taking the marraige photos early was such a good think,"
+    y"there is no way i would have had the energy to take any photos after yesterday.."
+    e"who knew wedding would be this tedious??"
+    e"I am drained..."
+    y"..."
+    e"It still feels surreal, we are husband and wife..."
+    y"I know right?"
+    y"We are lawfully wedded"
+    e"yup!"
+    "...."
+
     $ persistent.good_end = True
-    centered "₊✩‧₊˚౨ৎ˚₊✩‧₊\n\nGOOD END\n\n₊✩‧₊˚౨ৎ˚₊✩‧₊"
+    centered "₊✩‧₊˚౨ৎ˚₊✩‧₊\n\nLOVER END\n\n₊✩‧₊˚౨ৎ˚₊✩‧₊"
     return

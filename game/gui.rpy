@@ -32,17 +32,17 @@ define gui.idle_color = '#97c6a3'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#e4a2a2'
+define gui.idle_small_color = '#ffdc9a'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#f7e89d'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = '#580c0c'
 
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#8888887f'
+define gui.insensitive_color = '#0000007f'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
@@ -204,15 +204,15 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 1185
+define gui.choice_button_width = 900
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 8, 150, 8)
+define gui.choice_button_borders = Borders(15, 15, 15, 15)
 define gui.choice_button_text_font = gui.text_font
-define gui.choice_button_text_size = gui.text_size
+define gui.choice_button_text_size = 75
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = '#000000'
+define gui.choice_button_text_hover_color = "#f7ffb2"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 
@@ -224,10 +224,10 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 
 ## The save slot button.
 define gui.slot_button_width = 414
-define gui.slot_button_height = 309
-define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
-define gui.slot_button_text_xalign = 0.5
+define gui.slot_button_height = 500
+define gui.slot_button_borders = Borders(0, 35, 0, 35)
+define gui.slot_button_text_size = 90
+define gui.slot_button_text_xalign = 0.0
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
