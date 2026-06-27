@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 381: expected 'simple_expression' not found.
-    with with fade
-         ^
+File "game/screens.rpy", line 707: 'yos' is not a keyword argument or valid child of the vbox statement.
+    yos 700
+       ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Fri Jun 26 13:14:07 2026
+Sat Jun 27 22:29:24 2026

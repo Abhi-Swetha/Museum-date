@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -135,13 +135,13 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0,)
+    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
+    xpos 350
     xanchor gui.name_xalign
     xsize gui.namebox_width
-    ypos gui.name_ypos
+    ypos -87
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
@@ -217,7 +217,7 @@ style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xpos 1000
+    xalign 0.8
     ypos 500
     yanchor 0.5
 
@@ -246,7 +246,7 @@ screen quick_menu():
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Back") action Rollback()
+            #textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
@@ -289,28 +289,41 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.5
+        yalign 0.92 
 
-        spacing gui.navigation_spacing
+        spacing 66
 
         if main_menu:
-
-            textbutton _("Start") action Start()
+            
+            imagebutton:
+                idle im.Scale("start1_idle.png",100,100)
+                hover im.Scale("start1_hover.png",100,100)
+                action Start()
 
         else:
 
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
+        
 
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
-
+        hbox:
+            spacing -67
+            textbutton _("Load") action ShowMenu("load")
+            hbox:
+                
+                textbutton _("Preferences") action ShowMenu("preferences")
+                hbox:
+                    spacing -78
+                    if renpy.variant("pc"):
+                        ## The quit button is banned on iOS and unnecessary on Android and
+                        ## Web.
+                        textbutton _("Quit") action Quit(confirm=not main_menu)
+                    textbutton _("Albums") action ShowMenu("ending")
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
@@ -319,18 +332,14 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+        #    textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+        
 
 
 style navigation_button is gui_button
@@ -350,60 +359,6 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-screen main_menu():
-
-    ## This ensures that any other menu screen is replaced.
-    tag menu
-
-    add gui.main_menu_background
-
-    ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
-
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation
-
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
-
-style main_menu_frame is empty
-style main_menu_vbox is vbox
-style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
-
-style main_menu_frame:
-    xsize 420
-    yfill True
-
-    background "gui/overlay/main_menu.png"
-
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
-
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
 
 
 ## Game Menu screen ############################################################
@@ -414,7 +369,6 @@ style main_menu_version:
 ## The scroll parameter can be None, or one of "viewport" or "vpgrid".
 ## This screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
-
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     style_prefix "game_menu"
@@ -440,7 +394,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     viewport:
                         yinitial yinitial
-                        scrollbars "vertical"
+                        scrollbars "horizontal"
                         mousewheel True
                         draggable True
                         pagekeys True
@@ -486,6 +440,154 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         key "game_menu" action ShowMenu("main_menu")
 
 
+screen main_menu():
+
+    tag menu
+
+    ## Full-screen textured background (REPLACE ME via the image above)
+    add "gui/main_menu.png"
+
+    ## Cream parchment panel that holds the title + horizontal menu row.
+    ## This is a plain Solid color for now -- swap `background "#ECE9E2"`
+    ## for an `im.Crop(...)`/image path if you want a textured panel image
+    ## like the reference (a paper/card texture instead of a flat color).
+    frame:
+        xalign 0.5
+        ypos 70
+        xsize 1700
+        ysize 980
+        background "#ECE9E2"
+        padding (60, 50)
+
+        vbox:
+            ## ---- TITLE (TODO FONT: replace with a decorative
+            ##      display/gothic font to match the reference image) ----
+            vbox:
+                text "Date at the":
+                    font "font/YoungSerif-BoldItalic.ttf"
+                    size 100
+                    color "#262626"
+            vbox:
+                xpos 300
+                text "Art Exhibition":
+                    font "font/BerkshireSwash-Regular.ttf"
+                    size 200
+                    color "#262626"
+
+            null height 10
+
+            ## ---- HORIZONTAL ROW OF MENU OPTIONS ----
+            ## Kept as a single hbox so it always lays out left-to-right,
+            ## matching the reference image. Add/remove buttons freely --
+            ## the row will just get wider/narrower.
+            hbox:
+                yanchor 0.5
+                ypos 110
+                
+                hbox:
+                    xanchor 1
+                    xpos 10
+                    spacing 75
+                    textbutton "Load":
+                        action ShowMenu("load")
+                        text_font "font/YoungSerif-Bold.ttf"
+                        text_size 38
+                        text_color "#262626"
+                        text_hover_color "#8a1f1f"
+                    
+                    textbutton "Saves":
+                        yoffset -40
+                        action ShowMenu("save")
+                        text_font "font/YoungSerif-Bold.ttf"
+                        text_size 38
+                        text_color "#262626"
+                        text_hover_color "#8a1f1f"
+
+
+                    textbutton "Endings and Album":
+                        # TODO: point this at your own endings-list screen,
+                        # e.g. action ShowMenu("endings")
+                        action ShowMenu("endings")
+                        text_font "font/YoungSerif-Bold.ttf"
+                        text_size 38
+                        text_color "#262626"
+                        text_hover_color "#8a1f1f"
+
+#                    textbutton "Album":
+#                        # TODO: point this at your own gallery/CG-room screen,
+#                        # e.g. action ShowMenu("gallery")
+#                        action NullAction()
+#                        text_font "font/YoungSerif-Bold.ttf"
+#                        text_size 38
+#                        text_color "#262626"
+#                        text_hover_color "#8a1f1f"0
+
+                hbox:
+                    xanchor 0.6
+                    xpos 500
+                    spacing 75
+                    textbutton "Preferences":
+                        action ShowMenu("preferences")
+                        text_font "font/YoungSerif-Bold.ttf"
+                        text_size 38
+                        text_color "#262626"
+                        text_hover_color "#8a1f1f"
+
+#                    textbutton "About":
+#                       action ShowMenu("about")
+#                       text_font "font/YoungSerif-Bold.ttf"
+#                       text_size 38
+#                       text_color "#262626"
+#                       text_hover_color "#8a1f1f"
+
+                    hbox:
+                        ypos -40
+                        textbutton "Help":
+                            action Help()
+                            text_font "font/YoungSerif-Bold.ttf"
+                            text_size 38
+                            text_color "#262626"
+                            text_hover_color "#8a1f1f"
+
+                    textbutton "Quit":
+                        action Quit(confirm=not main_menu)
+                        text_font "font/YoungSerif-Bold.ttf"
+                        text_size 38
+                        text_color "#262626"
+                        text_hover_color "#8a1f1f"
+
+    ## ---- THE ROSE: clicking it starts the game ----
+    ## idle/hover are the two placeholder PNGs declared above.
+        imagebutton:
+            idle "start_idle"
+            hover "start_hover"
+            action Start()
+            xalign 0.5
+            yanchor 0
+            ypos 500
+
+        ## ---- Credits, bottom-right corner ----
+        vbox:
+            xalign 1.0
+            yanchor 1.0
+            ypos 850
+            spacing 2
+
+            text "MADE BY -  Abhi Vijaya Swetha":
+                font "font/YoungSerif-Bold.ttf"
+                size 20
+                color "#7a1f1f"
+
+            text "SOCIALS -  INSTA.   - bumble_.b.__":
+                font "font/YoungSerif-Bold.ttf"
+                size 18
+                color "#7a1f1f"
+
+            text "                         Youtube - Abhibi_lv1":
+                font "font/YoungSerif-Bold.ttf"
+                size 20
+                color "#7a1f1f"
+
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
@@ -528,6 +630,7 @@ style game_menu_label:
     ysize 180
 
 style game_menu_label_text:
+    font "font/BerkshireSwash-Regular.ttf"
     size 75
     color gui.accent_color
     yalign 0.5
@@ -535,7 +638,7 @@ style game_menu_label_text:
 style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
-    yoffset -45
+    yoffset -20
 
 
 ## About screen ################################################################
@@ -565,7 +668,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Made by {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -600,8 +703,10 @@ screen load():
 
 
 screen file_slots(title):
-
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+    vbox:
+        ypos 0
+        xalign 0.5
+        default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(title):
 
@@ -627,9 +732,9 @@ screen file_slots(title):
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
 
-                xalign 0.5
+                xanchor 0.5
                 yalign 0.5
-
+                xpos 500
                 spacing gui.slot_spacing
 
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
@@ -654,10 +759,9 @@ screen file_slots(title):
             ## Buttons to access other pages.
             vbox:
                 style_prefix "page"
-
                 xalign 0.5
-                yalign 1.0
-
+                yalign 1
+                xoffset -250
                 hbox:
                     xalign 0.5
 
@@ -667,13 +771,13 @@ screen file_slots(title):
                     key "save_page_prev" action FilePagePrevious()
 
                     if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
+                        textbutton _("A") action FilePage("auto")
 
                     if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
+                        textbutton _("Q") action FilePage("quick")
 
                     ## range(1, 10) gives the numbers from 1 to 9.
-                    for page in range(1, 10):
+                    for page in range(1,4):
                         textbutton "[page]" action FilePage(page)
 
                     textbutton _(">") action FilePageNext()
@@ -1049,9 +1153,9 @@ screen keyboard_help():
         label "S"
         text _("Takes a screenshot.")
 
-    hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+    #hbox:
+    #    label "V"
+    #    text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
 
     hbox:
         label "Shift+A"
@@ -1255,7 +1359,7 @@ style skip_text:
 style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
-    font "DejaVuSans.ttf"
+    font "font/YoungSerif-Bold.ttf"
 
 
 ## Notify screen ###############################################################
@@ -1619,3 +1723,21 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+screen endings():
+    tag menu
+    use game_menu(_("Endings"), scroll="viewport"):
+        vbox:
+            if persistent.good_end:
+                label _("Good End")
+                text _("You pet the cat. Nice!")
+            else:
+                label _("(???)")
+                text _("(ending locked)")
+
+            if persistent.bad_end:
+                label _("Bad End")
+                text _("You did not pet the cat. Not nice!")
+            else:
+                label _("(???)")
+                text _("(ending locked)")
