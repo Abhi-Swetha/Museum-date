@@ -122,11 +122,11 @@ screen artgallerys():
 
 label start:
     scene black
-    centered "You just confesses to your childhood friend, Laura Jane, \n and both have you decided to go on a date together after which she will give her answer based on how the date went. "
+    centered "{color=#ffffff}{size=50} You just confesses to your childhood friend, Laura Jane, \n and both have you decided to go on a date together after which she will give her answer based on how the date went.{/size}{/color} "
     scene bg room
     show L straighthappy 
     with fade
-    pause(0.5)
+    pause(0.5)  
     e "I Can't believe we are finally here! This is going to be my next new favorite place!"
     show L straightsmile 
 
@@ -197,12 +197,12 @@ label food:
     show L straighttalk 
     e"Alright...."
     scene black
-    centered"You and Laura both go and eat a hearthy meal, and come back.\nBoth of enter the Art gallery Room"
+    centered "{color=#ffffff}{size=50}You and Laura both go and eat a hearthy meal, and come back.\nBoth of enter the Art gallery Room {/size}{/color}"
     jump artgallery
 
 label artgallery:
     scene black
-    centered"You and Laura both enter the Art gallery Room"
+    centered "{color=#ffffff}{size=50}You and Laura both enter the Art gallery Room {/size}{/color}"
     scene bg artgallery 
     show L straighthappy
     with fade
@@ -347,7 +347,7 @@ label end:
     y"Its fine,I asked you out anyway..."
     y"soo...?"
     scene black
-    centered "You and Laura, leave the exhibition hall and go back to the waiting room.\nyou can feel your hands grow cold with both exictment and fear.\n \"Today wasn't that bad!\" you think, ofc you dozed off in the middle sometimes from being not able to sleep yesterday... but apart from that today went pretty well, ryt?!\n but now it is time to see if today actually went well... "
+    centered "{color=#ffffff}{size=50}You and Laura, leave the exhibition hall and go back to the waiting room.\nyou can feel your hands grow cold with both exictment and fear.\n \"Today wasn't that bad!\" you think, ofc you dozed off in the middle sometimes from being not able to sleep yesterday... but apart from that today went pretty well, ryt?!\n but now it is time to see if today actually went well... {/size}{/color}"
     if l >=12:
         jump goodend
     else:
@@ -392,8 +392,8 @@ label badend:
     scene black
     with fade
     pause(0.5)
-    centered"It takes you a couple of months to get over the rejection and \n\na few more before you could face Laura without the lingering feelings..."
-    centered"Both of you get buzy with life and after almost 5 years you ask her out to a drink,\n\n this time as a friend"
+    centered "{color=#ffffff}{size=50}It takes you a couple of months to get over the rejection and \n\na few more before you could face Laura without the lingering feelings..."
+    centered "{color=#ffffff}{size=50}Both of you get buzy with life and after almost 5 years you ask her out to a drink,\n\n this time as a friend {/size}{/color}"
     #scene bg badend with fade 
     #with pause (0.5)
     e"took you long enough to contact me again"
@@ -418,9 +418,9 @@ label badend:
     e"and for {i}you{/i} proposing to your girlfriend!"
     e"ready?"
     y"ready as I will ever be!"
-    centered "{size=90}CHEERS!!!!!" 
+    centered "{color=#ffffff}{size=90}CHEERS!!!!!{/size}{/color}" 
     $ persistent.bad_end = True 
-    centered "✦•┈⋅⋯ ⋯⋅┈•✦\n\nFRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦" 
+    centered "{color=#ffffff}{size=100}✦•┈⋅⋯ ⋯⋅┈•✦\n\nFRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦{/size}{/color}" 
     return
 
 label goodend:
@@ -452,10 +452,10 @@ label goodend:
     scene black
     with fade
     pause(0.5)
-    centered "you guys go on a second date to an Rock Climbing studio, This felt more like your usual hang out then the Art exhibition date,\n\nBut maybe thats not so bad? "
-    centered "Through the second date you both got closer, after which you went on 3 more diffrents date with her, each one getting more fun than before..."
-    centered "before long both of you had gotten closer, and the initial akwardness was no where to be seen\n\nYou decided to ask her out again...at 8 in the night\n\n both you meet at a park near her house."
-    centered "seems that Laura had also thought the same thing and both you end up confessing to each other at the same time."
+    centered "{color=#ffffff}{size=50}you guys go on a second date to an Rock Climbing studio, This felt more like your usual hang out then the Art exhibition date,\n\nBut maybe thats not so bad?{/size}{/color} "
+    centered "{color=#ffffff}{size=50}Through the second date you both got closer, after which you went on 3 more diffrents date with her, each one getting more fun than before...{/size}{/color}"
+    centered "{color=#ffffff}{size=50}before long both of you had gotten closer, and the initial akwardness was no where to be seen\n\nYou decided to ask her out again...at 8 in the night\n\n both you meet at a park near her house.{/size}{/color}"
+    centered "{color=#ffffff}{size=50}seems that Laura had also thought the same thing and both you end up confessing to each other at the same time.{/size}{/color}"
     #scene bg park
     #with fade
     #pause (0.5)
@@ -464,20 +464,20 @@ label goodend:
     e"but people change, and with those changes come new feelings"
     y"and sometimes, no matter how someone changes you can't help but love them.."
     "..."
-    centered "To be honest, there was no flying flower petals or fireworks, not even stars... "
-    centered "But that park with its floresent street light shinging down on Laura, was the most beutifull sight you jad seen in your life"
+    centered "{color=#ffffff}{size=50}To be honest, there was no flying flower petals or fireworks, not even stars... {/size}{/color}"
+    centered "{color=#ffffff}{size=50}But that park with its floresent street light shinging down on Laura, was the most beutifull sight you jad seen in your life{/size}{/color}"
     #show bg goodend
     #with fade
     #pause (0.5)
     e"I love you..."
     y"I love you too"
     e"(｡•́‿  •̀｡)"
-    y"(｡´ ‿｀♡)"
+    y"(｡´ ‿｀♡)" 
     e"(´｡• ᵕ •｡`)"
     scene black with fade
     pause (0.5)
-    centered "Years go by in an instant. You both of you had your ups and downs, soon your six year annniversry is coming..."
-    centered ""
+    centered "{color=#ffffff}{size=50}Years go by in an instant. You both of you had your ups and downs, soon your six year annniversry is coming...{/size}{/color}"
+    centered "{color=#ffffff}{size=50}...{/size}{/color}"
     $ persistent.good_end = True
-    centered "₊✩‧₊˚౨ৎ˚₊✩‧₊\n\nLOVER END\n\n₊✩‧₊˚౨ৎ˚₊✩‧₊"
+    centered "{color=#ffffff}{size=50}₊✩‧₊˚౨ৎ˚₊✩‧₊\n\nLOVER END\n\n₊✩‧₊˚౨ৎ˚₊✩‧₊{/size}{/color}"
     return

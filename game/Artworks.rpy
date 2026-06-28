@@ -60,8 +60,10 @@ init python:
 
     #gallery.button("Friends")
     #gallery.unlock_image imScale("cg/friend.png",540 , 304)
+    #gallery.unlock_image ("cg/friend2.png")
     #gallery.condition("persistent.bad_end")
 
     #gallery.button("Lovers")
     #gallery.unlock_image imScale("cg/lovers.png",540 , 304)
+    #gallery.unlock_image ("cg/lovers2.png")
     #gallery.condition("persistent.good_end")
