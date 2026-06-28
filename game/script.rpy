@@ -199,7 +199,6 @@ label food:
     scene black
     centered"You and Laura both go and eat a hearthy meal, and come back.\nBoth of enter the Art gallery Room"
     jump artgallery
-    
 
 label artgallery:
     scene black
@@ -214,7 +213,6 @@ label artgallery:
     with moveoutleft
     pause(0.3)
     jump artgallerys
-    
 
 label artgallerys:
     scene bg artgallery
@@ -258,7 +256,8 @@ default u_see =False
 
 label b_c:
     if not b_see:
-        $ b_see = True
+        $ b_see = True 
+        $ persistent.ballet=True
         $ art +=1
         jump ballet
     else:
@@ -267,7 +266,8 @@ label b_c:
 
 label c_c:
     if not c_see:
-        $ c_see = True
+        $ c_see = True 
+        $ persistent.candle=True
         $ art +=1
         jump candle
     else:
@@ -276,7 +276,8 @@ label c_c:
 
 label f_c:
     if not f_see:
-        $ f_see = True
+        $ f_see = True 
+        $ persistent.field=True
         $ art +=1
         jump field
     else:
@@ -285,7 +286,8 @@ label f_c:
 
 label i_c:
     if not i_see:
-        $ i_see = True
+        $ i_see = True 
+        $ persistent.invert=True
         $ art +=1
         jump invert
     else:
@@ -294,7 +296,8 @@ label i_c:
 
 label S_c:
     if not s_see:
-        $ s_see = True
+        $ s_see = True 
+        $ persistent.sea=True
         $ art +=1
         jump sea
     else:
@@ -303,7 +306,8 @@ label S_c:
 
 label sl_c:
     if not Sl:
-        $ Sl = True
+        $ Sl = True 
+        $ persistent.slime=True
         $ art +=1
         jump slime
     else:
@@ -312,7 +316,8 @@ label sl_c:
 
 label sp_c:
     if not Sp:
-        $ Sp = True
+        $ Sp = True 
+        $ persistent.sun=True
         $ art +=1
         jump sunpencil
     else:
@@ -321,7 +326,8 @@ label sp_c:
 
 label u_c:
     if not u_see:
-        $ u_see = True
+        $ u_see = True 
+        $ persistent.uravity=True
         $ art +=1
         jump uravity
     else:
@@ -365,8 +371,8 @@ label badend:
     e"I know you feelings are genuine, which is why i don't want to give you false hope."
     show L straightnortalk
     e"I don't think I can accept you confession, because i don't feel the same way"
-    y"I see,(ᵕ—ᴗ—)"
-    y"I mean i expected it but, still ..(╥_╥)"
+    y"I see,('—_—)"
+    y"I mean i expected it but, still ..(T_T)"
     y"Still,"
     show L sidesmile
     y"do you think we can continue being friends?"
@@ -471,17 +477,7 @@ label goodend:
     scene black with fade
     pause (0.5)
     centered "Years go by in an instant. You both of you had your ups and downs, soon your six year annniversry is coming..."
-    y"Taking the marraige photos early was such a good think,"
-    y"there is no way i would have had the energy to take any photos after yesterday.."
-    e"who knew wedding would be this tedious??"
-    e"I am drained..."
-    y"..."
-    e"It still feels surreal, we are husband and wife..."
-    y"I know right?"
-    y"We are lawfully wedded"
-    e"yup!"
-    "...."
-
+    centered ""
     $ persistent.good_end = True
     centered "₊✩‧₊˚౨ৎ˚₊✩‧₊\n\nLOVER END\n\n₊✩‧₊˚౨ৎ˚₊✩‧₊"
     return

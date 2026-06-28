@@ -293,8 +293,8 @@ screen navigation():
 
         xalign 0.5
         yalign 0.97 
-
-        spacing 5
+        xoffset 60
+        spacing -50
 
         if main_menu:
             
@@ -311,29 +311,26 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
         
+        textbutton _("Load") action ShowMenu("load")
 
-        hbox:
-            spacing -64
-            textbutton _("Load") action ShowMenu("load")
-            hbox:
-                
-                textbutton _("Preferences") action ShowMenu("preferences")
-                hbox:
-                    spacing -70
-                    if renpy.variant("pc"):
-                        ## The quit button is banned on iOS and unnecessary on Android and
-                        ## Web.
-                        textbutton _("Quit") action Quit(confirm=not main_menu)
-                    textbutton _("Albums") action ShowMenu("ending")
+        
+        textbutton _("Albums") action ShowMenu("endings")
+        textbutton _("About") action ShowMenu("about")
+        textbutton _("Preferences") action ShowMenu("preferences")
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
-
+        
         elif not main_menu:
 
             textbutton _("Main Menu") action MainMenu()
 
-        #textbutton _("About") action ShowMenu("about")
+        
+        
+        if renpy.variant("pc"):
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
 
         #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -456,7 +453,7 @@ screen main_menu():
         xalign 0.5
         ypos 70
         xsize 1700
-        ysize 980
+        ysize 928
         background "#ECE9E2"
         padding (60, 50)
 
@@ -505,7 +502,7 @@ screen main_menu():
                         text_hover_color "#8a1f1f"
 
 
-                    textbutton "Endings and Album":
+                    textbutton "Album":
                         # TODO: point this at your own endings-list screen,
                         # e.g. action ShowMenu("endings")
                         action ShowMenu("endings")
@@ -515,22 +512,23 @@ screen main_menu():
                         text_hover_color "#8a1f1f"
 
                 hbox:
-                    xanchor 0.6
+                    xanchor 0.3
                     xpos 500
-                    spacing 75
+                    spacing 70
                     textbutton "Preferences":
+                        ypos -40
                         action ShowMenu("preferences")
                         text_font "font/YoungSerif-Bold.ttf"
                         text_size 38
                         text_color "#262626"
                         text_hover_color "#8a1f1f"
 
-#                    textbutton "About":
-#                       action ShowMenu("about")
-#                       text_font "font/YoungSerif-Bold.ttf"
-#                       text_size 38
-#                       text_color "#262626"
-#                       text_hover_color "#8a1f1f"
+                    textbutton "About Me":
+                        action ShowMenu("about")
+                        text_font "font/YoungSerif-Bold.ttf"
+                        text_size 38
+                        text_color "#262626"
+                        text_hover_color "#8a1f1f"
 
                     hbox:
                         ypos -40
@@ -570,12 +568,12 @@ screen main_menu():
                 size 20
                 color "#7a1f1f"
 
-            text "SOCIALS -  INSTA.   - bumble_.b.__":
+            text "SOCIALS -  INSTA.   - {a=https://instagram.com/bumble_.b._}{b}bumble_.b._{/b}{/a}":
                 font "font/YoungSerif-Bold.ttf"
                 size 18
                 color "#7a1f1f"
 
-            text "                         Youtube - Abhibi_lv1":
+            text "                         Youtube - {a=https://www.youtube.com/@Abhibi_lv1}{b}Abhibi_lv1{/b}{/a}":
                 font "font/YoungSerif-Bold.ttf"
                 size 20
                 color "#7a1f1f"
@@ -647,21 +645,19 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("About Me!")):
 
         style_prefix "about"
 
         vbox:
-
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
-
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Made by {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
-
+            text _("Made by V Abhi Vijaya Swetha <3"):
+                size 140
+                color "#651a14ff"
+            text _("\nInsta- {a=https://instagram.com/bumble_.b._}{i}bumble_.b._{/i}{/a}\n"):
+                size 34
+            text _("Youtube- {a=https://www.youtube.com/@Abhibi_lv1}{i}Abhibi_lv1{/i}{/a}\n"):
+                size 34
+            text _("Feel free to Support this gorgeous baddie who has too many hobbies an pending projects to say out loud 😝")
 
 style about_label is gui_label
 style about_label_text is gui_label_text
@@ -829,8 +825,8 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-
-    use game_menu(_("Preferences"), scroll="viewport"):
+    
+    use game_menu(_("settings")):
 
         vbox:
 
@@ -1021,7 +1017,7 @@ screen history():
                     substitute False
 
         if not _history_list:
-            label _("The dialogue history is empty.")
+            label _("The dialogue history is empty.You haven't missed a thing!")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1715,21 +1711,3 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
-
-screen endings():
-    tag menu
-    use game_menu(_("Album<3")):
-        vbox:
-            if persistent.good_end:
-                label _("Good End")
-                text _("You pet the cat. Nice!")
-            else:
-                label _("(???)")
-                text _("(ending locked)")
-
-            if persistent.bad_end:
-                label _("Bad End")
-                text _("You did not pet the cat. Not nice!")
-            else:
-                label _("(???)")
-                text _("(ending locked)")

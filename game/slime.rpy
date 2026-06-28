@@ -54,7 +54,7 @@ label slx:
     e"extremly"
     y"what abt me?"
     e"huh?"
-    y"i have called cute by quite a few people, myself"
+    y"i have been called cute by quite a few people, myself"
     y"don't you think i am cute?"
     e">////<"
     e"ye-yeah"

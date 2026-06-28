@@ -12,6 +12,7 @@ label invert:
 
     menu:
         "go see the fliped version":
+            $ persistent.invert2 = True
             $ l +=2
             call iax
             
@@ -30,6 +31,7 @@ label invert:
             $ h+=1
 
             if h>3:
+                $ persistent.invert2 = True
                 e"but still dont you think there might be more to it?"
                 y"uhhh..."
                 y"(i think i may have seemed uninterseted, fak... )"
