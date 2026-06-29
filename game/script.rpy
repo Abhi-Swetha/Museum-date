@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define e = Character("Laura",color="#ffeba9")
-define y = Character("You", color="#7d5ba9")
+define y = Character("You", color="#c88e8e",what_font="font/LiberationSerif-Regular.ttf")
 define both = Character("You and Laura",color="#8595d1ff")
 
 #all sprites
@@ -44,17 +44,17 @@ default l = 0
 default h=0
 default x=1
 default art=0
-default base=False
+
 default Tim=False
 
 $ global h
 $ global x
-$ global base
+
 
 screen artgallerys():
     add "bg artgallery"
     modal True
-
+    
     imagebutton :
         auto "art_options/ballet_%s.png"
         focus_mask True
@@ -121,6 +121,7 @@ screen artgallerys():
         action Jump("u_c")
 
 label start:
+    play music "adiou/Art_gallery.mp3" volume 0.5 fadein 0.5 loop
     scene black
     centered "{color=#ffffff}{size=50} You just confesses to your childhood friend, Laura Jane, \n and both have you decided to go on a date together after which she will give her answer based on how the date went.{/size}{/color} "
     scene bg room
@@ -147,7 +148,7 @@ label start:
     e"Half the fun of going to an art gallery is just looking at the art and seeing what you like and dont like! You dont have to know anything about art to enjoy it!"
     show L straightsmile
     show L closedhappy
-    e"Still , i am happy you put so much thought into this , man "
+    e"Still , i am happy you put so much thought into this ,"
     show L sidetalk
     e"and here i thought your confession was a mean prank you pulled, and you agreed to the date to clear your name "
     show L sidesmile
@@ -182,25 +183,30 @@ label start:
             pause (0.5)
             y "Alright, lets go look at the art first!"
             $ l += 1
+            stop music fadeout 0.2
             jump artgallery
         "Go eat first":
             show L straightsmile at center
             with move
             pause (0.5)
             y "Alright, lets go eat first!"
+            stop music fadeout 0.2
             jump food
 
     return
 
 label food:
+    play music "adiou/Art_gallery.mp3" fadein 0.5 volume 0.5 loop
     scene bg room
     show L straighttalk 
     e"Alright...."
     scene black
     centered "{color=#ffffff}{size=50}You and Laura both go and eat a hearthy meal, and come back.\nBoth of enter the Art gallery Room {/size}{/color}"
     jump artgallery
+    stop music fadeout 0.5
 
 label artgallery:
+    play music "adiou/Art_gallerytrue.mp3" fadein 0.5 volume 0.5
     scene black
     centered "{color=#ffffff}{size=50}You and Laura both enter the Art gallery Room {/size}{/color}"
     scene bg artgallery 
@@ -212,9 +218,11 @@ label artgallery:
     hide L straightsmile
     with moveoutleft
     pause(0.3)
+    stop music fadeout 0.2
     jump artgallerys
 
 label artgallerys:
+    play music "adiou/Art_gallerytrue.mp3" volume 0.5 loop
     scene bg artgallery
     if art >=8:
         show L sidehappy
@@ -224,23 +232,28 @@ label artgallerys:
         show L closedhappy
         e"hehe, you are ryt!"
         jump end 
-
+    
     call screen artgallerys 
 
 label alreadyseen:
+    play music "adiou/Art_gallerytrue.mp3" volume 0.5 fadein 0.5 loop
     y "(didn't we already see that one?)"
     y "(lets choose smt else)"
+    stop music fadeout 0.2
     jump artgallerys
     return
 
 #check if seen
 label door_c:
+    play music "adiou/Art_gallerytrue.mp3" volume 0.5 fadein 0.5 loop
     if art >= 4:
+        stop music fadeout 0.2
         jump end
     else:
         y "(leave already??, we haven't even seen 4 artworks yet)"
         y "(we can leave after a while)"
         y "(lets see what artwork to look at next!)"
+        stop music fadeout 0.2
         jump artgallerys
     return
         
@@ -253,7 +266,7 @@ default s_see=False
 default Sp=False
 default Sl=False
 default u_see =False
-
+$ global b_see 
 label b_c:
     if not b_see:
         $ b_see = True 
@@ -335,6 +348,7 @@ label u_c:
     return
 
 label end:
+    play music "adiou/Art_gallerytrue.mp3" volume 0.5 fadein 0.5 
     scene bg artgallery
     show L sidehappy
     with moveinleft
@@ -344,6 +358,7 @@ label end:
     show L straighthappy
     e"Thank you for taking me out"
     show L sidesmile
+    play sound "adiou/bildend.wav" volume 0.2 fadein 0.5
     y"Its fine,I asked you out anyway..."
     y"soo...?"
     scene black
@@ -355,13 +370,16 @@ label end:
     return
 
 label badend:
+    play sound "adiou/bildend.wav" volume 0.5 fadein 0.5
     scene bg mainplain
     show L straightnor
     with dissolve 
     pause(0.7)
     show L straightnortalk
+    play music "adiou/rejectbef.mp3" volume 0.5 fadein 0.5
     e"I-uhh, I first want to thank you for confessing to me..."
     show L sidetalk
+    stop sound fadeout 0.7
     e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
     show L straightnortalk
     e"But I dont have any romantic feelings toward you, even now I only see you as a friend"
@@ -373,6 +391,8 @@ label badend:
     e"I don't think I can accept you confession, because i don't feel the same way"
     y"I see,('—_—)"
     y"I mean i expected it but, still ..(T_T)"
+    play sound "adiou/rejectafter.mp3" volume 0.5 fadein 0.5
+    stop music fadeout 0.7
     y"Still,"
     show L sidesmile
     y"do you think we can continue being friends?"
@@ -394,42 +414,52 @@ label badend:
     pause(0.5)
     centered "{color=#ffffff}{size=50}It takes you a couple of months to get over the rejection and \n\na few more before you could face Laura without the lingering feelings..."
     centered "{color=#ffffff}{size=50}Both of you get buzy with life and after almost 5 years you ask her out to a drink,\n\n this time as a friend {/size}{/color}"
+    stop sound fadeout 0.8
+    play music "adiou/bar.mp3" volume 0.5 fadein 1
+    play sound "adiou/barback.wav" volume 0.3 fadein 0.5
     #scene bg badend with fade 
     #with pause (0.5)
     e"took you long enough to contact me again"
-    y"Moving on from your first love is harder than you think... (;-n-)"
+    y"Moving on from your first love is harder than you think... \n(;-n-)"
     y"its even harder to get rid of the lingering feeling,haaa......"
     y"btw congrats on getting engaged! I heard you got proposed on the same day you got your promotion"
     e"oh, YES!!! That is officially the {i}happiest{/i} day of my life!!!"
-    e"Ahh...That was the first time i cried tears of joy (>ᴗ<)♡"
+    e"Ahh...That was the first time i cried tears of joy (> . <)♡"
     e"I heard you got a girlfrienddd~!, who is the lucky girl??"
     e"I saw her on insta, how did you bag such a badddie?"
     y"Hey!! \n(>///<)\nwell Shraya,my girlfriend was the one who confessed to me..."
     y"and to be honest, i thought i was dreaming, and it was just around the time i had gotton open to dating again"
     y"so I said yes, and I have grown to love her a {b}LOT{/b}"
-    y"don't tell her but, I am planning on proposeing to her on our 3rd year anniversary...(ᴗ͈ˬᴗ͈)!"
-    e"(,,>ヮ<,,) eekkkk!"
-    e"...."
+    y"don't tell her but, I am planning on proposeing to her on our 3rd year anniversary...(^///^)!"
+    e"(,,>7<,,) eekkkk!"
+    centered "{color=#ffffff}{size=50}time flows by just as it has, 10 minutes turn to an hour then two ...{/size}{/color}" 
+    centered "{color=#ffffff}{size=50}Catching up on the things you missed ,laughing, chatting ,it felt like the 5 years you were apart were nothing...{/size}{/color}"
     y"..."
     e"A lot can change in 5 years, huh?"
     y"yea,"
+    y"..."
     e"let's toast to that?"
+    y":)"
     y"and for your engaement!"
     e"and for {i}you{/i} proposing to your girlfriend!"
     e"ready?"
     y"ready as I will ever be!"
+    stop sound fadeout 0.5
     centered "{color=#ffffff}{size=90}CHEERS!!!!!{/size}{/color}" 
     $ persistent.bad_end = True 
     centered "{color=#ffffff}{size=100}✦•┈⋅⋯ ⋯⋅┈•✦\n\nFRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦{/size}{/color}" 
     return
 
 label goodend:
+    play sound "adiou/bildend.wav" volume 0.2 fadein 0.5
     scene bg mainplain
     with fade
     show L straightsmile
     with fade 
     pause(0.3)
     show L sidehappy
+    play music "adiou/rejectbef.mp3" volume 0.5 fadein 0.5
+    stop sound fadeout 0.7
     e"I-uhh, I first want to thank you for confessing to me..."
     show L sidetalk
     e"I didn't think anyone would think of me that way, espeacialy {i}you{/i}"
@@ -440,6 +470,7 @@ label goodend:
     show L straightsmile
     y"I see-"
     show L downtalk
+    play music "adiou/good_end.mp3" volume 0.5 fadein 1.0 
     e"-That being said, if {b}you{/b} are okey with it..."
     e"I would like us to keep hanging out like this, not as friends but something more..."
     show L downhappy
@@ -459,25 +490,25 @@ label goodend:
     #scene bg park
     #with fade
     #pause (0.5)
+    play sound "adiou/park back.mp3" volume 0.2 fadein 0.5
+    play musiv "adiou/park.mp3" volume 0.5 fadein 0.5
     e"I never thought i would ever fall in love with the most cowardly, nerdy guy i knew..."
     y"and I never thought i would fall in love with the most unrully reckless girl i knew.."
     e"but people change, and with those changes come new feelings"
     y"and sometimes, no matter how someone changes you can't help but love them.."
     "..."
     centered "{color=#ffffff}{size=50}To be honest, there was no flying flower petals or fireworks, not even stars... {/size}{/color}"
-    centered "{color=#ffffff}{size=50}But that park with its floresent street light shinging down on Laura, was the most beutifull sight you jad seen in your life{/size}{/color}"
+    centered "{color=#ffffff}{size=50}But that park with its floresent street light shinging down on Laura, {/size}{/color}"
     #show bg goodend
     #with fade
     #pause (0.5)
     e"I love you..."
+    centered "{color=#ffffff}{size=50}was the most beutifull sight you had seen in your life{/size}{/color}"
     y"I love you too"
-    e"(｡•́‿  •̀｡)"
-    y"(｡´ ‿｀♡)" 
-    e"(´｡• ᵕ •｡`)"
+    e"('.////.')"
+    y"(^///^)"
     scene black with fade
     pause (0.5)
-    centered "{color=#ffffff}{size=50}Years go by in an instant. You both of you had your ups and downs, soon your six year annniversry is coming...{/size}{/color}"
-    centered "{color=#ffffff}{size=50}...{/size}{/color}"
     $ persistent.good_end = True
-    centered "{color=#ffffff}{size=50}₊✩‧₊˚౨ৎ˚₊✩‧₊\n\nLOVER END\n\n₊✩‧₊˚౨ৎ˚₊✩‧₊{/size}{/color}"
+    centered "{color=#ffffff}{size=90}-----------------\n\nLOVER END\n\n-----------------{/size}{/color}"
     return

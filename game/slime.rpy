@@ -1,5 +1,5 @@
 define e = Character("Laura",color="#ffeba9")
-define y = Character("You", color="#ffffff")
+define y = Character("You", color="#c88e8e",what_font="font/LiberationSerif-Regular.ttf")
 $ global h
 $ global x
 

@@ -10,6 +10,9 @@ init offset = -2
 ## width and height of the game.
 init python:
     gui.init(1920, 1080)
+    # music
+define config.default_music_volume=0.5
+define config.default_sfx_volume=0.5
 
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
@@ -32,7 +35,7 @@ define gui.idle_color = '#ece17b'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#9c7b7b'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#e06666'
@@ -203,8 +206,8 @@ define gui.navigation_button_width = 250
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 600
-define gui.choice_button_height = 200
+define gui.choice_button_width = 700
+define gui.choice_button_height = 150
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(8, 50, 8, 8)
 define gui.choice_button_text_font = gui.text_font

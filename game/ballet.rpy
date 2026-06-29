@@ -1,5 +1,6 @@
 define e = Character("Laura",color="#ffeba9")
-define y = Character("You", color="#ffffff")
+define y = Character("You", color="#c88e8e",what_font="font/LiberationSerif-Regular.ttf")
+define both = Character("You and Laura",color="#8595d1ff")
 
 $ global h
 $ global x
@@ -12,7 +13,7 @@ label ballet:
     with fade
     e "This is beautiful! I love the way the ballerina is captured in mid-air. The colors are so vibrant and the movement is so graceful."
     e"the ballerina dosent seem so happy though,"
-    e "I wonder what the artist was trying to convey with this painting. Maybe it's a commentary on the invisible struggles or ristricktion on those we admire?."
+    e "I wonder what the artist was trying to convey with this painting. Maybe it's a commentary on the invisible struggles or restrictions on those we admire?."
     e"what do you think?"
 
     menu:
@@ -64,7 +65,7 @@ label ex:
     y"ugh.. don't tease me like that \n (-/////-)"
     e"but both ways..."
     y":)"
-    "You and Laura" "This piece represents resstriction of a persons will!"
+    both "This piece represents resstriction of a persons will!"
     y"i think.."
     e"i am sure there is a better way to phrase it but ehh, --\(`_`/--)"
     return

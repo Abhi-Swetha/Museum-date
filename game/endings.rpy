@@ -45,19 +45,35 @@ screen endings():
             if page == 1:
                 grid 3 2:
                     spacing 30
-                    add gallery.make_button(name="ballet",unlocked="cg/ballet.png",locked="cg/locked.png")
-                    add gallery.make_button(name="sea",unlocked="cg/sea.png",locked="cg/locked.png")
-                    add gallery.make_button(name="slime",unlocked="cg/slime.png",locked="cg/locked.png")
-                    add gallery.make_button(name="sunpencil",unlocked="cg/sun.png",locked="cg/locked.png")
-                    add gallery.make_button(name="field",unlocked="cg/field.png",locked="cg/locked.png")
-                    add gallery.make_button(name="invert",unlocked="cg/filp.png",locked="cg/locked.png")
+                    vbox:
+                        add gallery.make_button(name="ballet",unlocked="cg/ballet.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="ballet",format=u"{seen}/{total}")
+                    vbox:
+                        add gallery.make_button(name="sea",unlocked="cg/sea.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="sea",format=u"{seen}/{total}")
+                    vbox:
+                        add gallery.make_button(name="slime",unlocked="cg/slime.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="slime",format=u"{seen}/{total}")
+                    vbox:
+                        add gallery.make_button(name="sunpencil",unlocked="cg/sun.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="sunpencil",format=u"{seen}/{total}")
+                    vbox:
+                        add gallery.make_button(name="field",unlocked="cg/field.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="field",format=u"{seen}/{total}")
+                    vbox:
+                        add gallery.make_button(name="invert",unlocked="cg/filp.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="invert",format=u"{seen}/{total}")
 
             elif page==2:
                 grid 2 2:
                     yoffset 200
                     spacing 30
-                    add gallery.make_button(name="uravity",unlocked="cg/uravity.png",locked="cg/locked.png")
-                    add gallery.make_button(name="candle",unlocked="cg/candle.png",locked="cg/locked.png")
+                    vbox:
+                        add gallery.make_button(name="uravity",unlocked="cg/uravity.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="uravity",format=u"{seen}/{total}")
+                    vbox:
+                        add gallery.make_button(name="candle",unlocked="cg/candle.png",locked="cg/locked.png")
+                        text gallery.get_fraction(name="candle",format=u"{seen}/{total}")
     use gallery_nav
     use navigation
 

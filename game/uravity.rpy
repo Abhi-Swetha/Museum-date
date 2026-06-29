@@ -1,5 +1,5 @@
 define e = Character("Laura",color="#ffeba9")
-define y = Character("You", color="#ffffff")
+define y = Character("You", color="#c88e8e",what_font="font/LiberationSerif-Regular.ttf")
 $ global h
 $ global x
 
@@ -54,7 +54,7 @@ label uravity:
 label uax:
     y"her experssion seems more helpless than desperate"
     e"huh? wait.."
-    e"yeaa i get waht you mean!"
+    e"yeaa i get what you mean!"
     y"btw doesn't she remind you of a character from an anime?"
     e"oh yeaa! The one with the chubby cheeks!"
     y"yeaa, Damn, I didn't expect to see an anime inspired character here"

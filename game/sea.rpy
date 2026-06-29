@@ -1,15 +1,15 @@
 define e = Character("Laura",color="#ffeba9")
-define y = Character("You", color="#ffffff")
+define y = Character("You", color="#c88e8e",what_font="font/LiberationSerif-Regular.ttf")
 $ global h
 $ global x
+$ global b_see 
 $ global Tim
-$ global base
 label sea:
     scene sea
     with fade
     e "this one is simpler than the others."
-    y"yea , your are ryt"
-    e "didn't the artist fear this one might feel underwhelming compared to the other?."
+    y"yea , you are ryt..."
+    e "didn't the artist fear this one might feel underwhelming compared to the other?"
     e"what do you think?"
 
     menu:
@@ -60,7 +60,7 @@ label sax:
     y "its simple style and minimal coloring looks really good!"
     e "yea, i can almost feel the breeze through this piece"
     e "the ballerina is still my fav,"
-    if base:
+    if b_see :
         e"Both the piece and the how the meaning is hinted by it are beutifull"
     else:
         e"lets go see it next !"
