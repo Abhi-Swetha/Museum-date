@@ -1,4 +1,4 @@
-screen gallery_nav:
+screen gallery_nav():
     hbox:
         yalign 0.1
         xalign 0.5

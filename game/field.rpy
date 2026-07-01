@@ -38,7 +38,7 @@ label field:
                 y"(i think i may have seemed uninterseted... )"
                 y"well..."
                 call fex
-                e"so you {b}{i}DID{/b}{/i} think there was more to it! "
+                e"so you {b}{i}DID{/i}{/b} think there was more to it! "
                 e"i thought you were nodding to everything i said cuz you were bored"
                 y"ofc not! Dude we have been friends for almost our entire lives, what makes you think {b}{i}I{/i}{/b} would be bored in an {i}Art exhibition!{/i}. -_- ?"
                 e"yea , you're right. hehehe"

@@ -6,6 +6,7 @@ $ global h
 $ global x
 $ global base
 $ global Tim
+
 label ballet:
     if Tim:
         $ l+=1
@@ -39,7 +40,7 @@ label ballet:
                 y"uhhh..."
                 y"(i think she asked smt abt the paintin's meaning )"
                 call ex
-                e"so you {b}{i}DID{/b}{/i} think there was more to it! "
+                e"so you {b}{i}DID{/i}{/b} think there was more to it! "
                 e"i thought you were nodding to everything i said cuz you were tired"
                 y"ofc not ! Bro-i mean Dud-i mean {i}laura{/i}"
                 e"it seems old habbits die hard"

@@ -38,7 +38,7 @@ label candle:
                 y"(what did she ask? )"
                 y"(i think she asked smt , ryt? )"
                 call cax
-                e"so you {b}{i}DID{/b}{/i} think there was more to it! "
+                e"so you {b}{i}DID{/i}{/b} think there was more to it! "
                 e"i thought you were nodding to everything i said cuz you were tired"
                 y"ofc ! Dude we have been friends for almost our entire lives, what makes you think {b}{i}I{/i}{/b} would be bored in an {i}Art exhibition!{/i}. -_- ?"
                 e"yea , you're right. hehehe"

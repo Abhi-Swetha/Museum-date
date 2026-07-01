@@ -112,11 +112,9 @@ screen Album():
             spacing 20
             grid 2 2:
                 spacing 30
-                add gallery.make_button(name="ballet",unlocked="cg/ballet.png",locked="cg/locked.png")
-                add gallery.make_button(name="sea",unlocked="cg/sea.png",locked="cg/locked.png")
-
-                #add gallery.make_button(name="Friends",unlocked="cg/friend.png",locked="cg/locked.png")
-                #add gallery.make_button(name="Lovers",unlocked="cg/love.png",locked="cg/locked.png")
+                add gallery.make_button(name="friend",unlocked=im.Scale("friends.png",540,304),locked="cg/locked.png")
+                
+                add gallery.make_button(name="love",unlocked=im.Scale("lover.rpyc.jpg",540,304),locked="cg/locked.png")
     use gallery_nav
     use navigation
 

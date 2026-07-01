@@ -38,7 +38,8 @@ image sea = "images/bg sea.png"
 image sunpencil = "images/bg sunpencil.png"
 image slime= "images/bg slime.png"
 image uravity = "images/bg uravity.png"
-
+image friend=im.Scale("friends.png",1920,1080)
+image lover=im.Scale("lover.rpyc.jpg",1920,1080)
 # The game starts here.
 default l = 0
 default h=0
@@ -417,8 +418,8 @@ label badend:
     stop sound fadeout 0.8
     play music "adiou/bar.mp3" volume 0.5 fadein 1
     play sound "adiou/barback.wav" volume 0.3 fadein 0.5
-    #scene bg badend with fade 
-    #with pause (0.5)
+    scene friend with fade 
+    with Pause (0.5)
     e"took you long enough to contact me again"
     y"Moving on from your first love is harder than you think... \n(;-n-)"
     y"its even harder to get rid of the lingering feeling,haaa......"
@@ -432,8 +433,12 @@ label badend:
     y"so I said yes, and I have grown to love her a {b}LOT{/b}"
     y"don't tell her but, I am planning on proposeing to her on our 3rd year anniversary...(^///^)!"
     e"(,,>7<,,) eekkkk!"
+    scene black with dissolve
+    with Pause(0.5)
     centered "{color=#ffffff}{size=50}time flows by just as it has, 10 minutes turn to an hour then two ...{/size}{/color}" 
     centered "{color=#ffffff}{size=50}Catching up on the things you missed ,laughing, chatting ,it felt like the 5 years you were apart were nothing...{/size}{/color}"
+    scene friend with fade 
+    with Pause (0.5)
     y"..."
     e"A lot can change in 5 years, huh?"
     y"yea,"
@@ -444,9 +449,11 @@ label badend:
     e"and for {i}you{/i} proposing to your girlfriend!"
     e"ready?"
     y"ready as I will ever be!"
+    scene black with fade
+    with Pause(0.5)
     stop sound fadeout 0.5
     centered "{color=#ffffff}{size=90}CHEERS!!!!!{/size}{/color}" 
-    $ persistent.bad_end = True 
+    $ persistent.bad_end= True 
     centered "{color=#ffffff}{size=100}✦•┈⋅⋯ ⋯⋅┈•✦\n\nFRIENDSHIP END\n\n✦•┈⋅⋯ ⋯⋅┈•✦{/size}{/color}" 
     return
 
@@ -487,23 +494,23 @@ label goodend:
     centered "{color=#ffffff}{size=50}Through the second date you both got closer, after which you went on 3 more diffrents date with her, each one getting more fun than before...{/size}{/color}"
     centered "{color=#ffffff}{size=50}before long both of you had gotten closer, and the initial akwardness was no where to be seen\n\nYou decided to ask her out again...at 8 in the night\n\n both you meet at a park near her house.{/size}{/color}"
     centered "{color=#ffffff}{size=50}seems that Laura had also thought the same thing and both you end up confessing to each other at the same time.{/size}{/color}"
-    #scene bg park
-    #with fade
-    #pause (0.5)
     play sound "adiou/park back.mp3" volume 0.2 fadein 0.5
-    play musiv "adiou/park.mp3" volume 0.5 fadein 0.5
-    e"I never thought i would ever fall in love with the most cowardly, nerdy guy i knew..."
-    y"and I never thought i would fall in love with the most unrully reckless girl i knew.."
-    e"but people change, and with those changes come new feelings"
-    y"and sometimes, no matter how someone changes you can't help but love them.."
-    "..."
+    play music "adiou/park.mp3" volume 0.5 fadein 0.5
     centered "{color=#ffffff}{size=50}To be honest, there was no flying flower petals or fireworks, not even stars... {/size}{/color}"
     centered "{color=#ffffff}{size=50}But that park with its floresent street light shinging down on Laura, {/size}{/color}"
-    #show bg goodend
-    #with fade
-    #pause (0.5)
-    e"I love you..."
+    show lover
+    with fade
+    pause (2)
+    centered "{color=#f1d188}{size=90}Laura: I love You {/size}{/color}"
+    with Pause(0.5)
+    
+    scene black
+    with fade
+    pause(0.5)
     centered "{color=#ffffff}{size=50}was the most beutifull sight you had seen in your life{/size}{/color}"
+    show lover
+    with fade
+    pause (0.5)
     y"I love you too"
     e"('.////.')"
     y"(^///^)"
