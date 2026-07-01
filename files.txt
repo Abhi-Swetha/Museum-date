@@ -1,7 +1,6 @@
 .DS_Store
 ballet.rpy
 ballet.rpyc
-candel.rpyc
 candle.rpy
 candle.rpyc
 field.rpy

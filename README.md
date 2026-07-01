@@ -16,3 +16,15 @@ THE PROCESS
 
     as i am just starting out , watching yt tutorials and reading guides have been my initial process
     and then drawing and desinging the room and frames in canva algong with creating sprites. Still ongoing...
+    oh and canva! I am using canva for most other graphics! then i got the music from Envato, fonts from Dafont.
+    my main process looked like this---> watch yt tutorials->try it out-> get error->fix said error->write the dialong needed for the scene->run again->if no errors move on->repeat
+
+ABOUT THE GAME:
+
+    The game contains 359 dialogue blocks, containing 3,274 words and 17,668
+    characters, for an average of 9.1 words and 49 characters per block.
+
+    The game contains 9 menus, 38 images, and 28 screens.
+
+RUNNING:
+    click the rose in th emain menu or the game menu will start the game , after which runs like a normal Visual novel game.
