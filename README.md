@@ -27,4 +27,5 @@ ABOUT THE GAME:
     The game contains 9 menus, 38 images, and 28 screens.
 
 RUNNING:
-    click the rose in th emain menu or the game menu will start the game , after which runs like a normal Visual novel game.
+
+    click the rose in the main menu or the game menu will start the game , after which runs like a normal Visual novel game.
