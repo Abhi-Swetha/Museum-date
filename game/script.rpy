@@ -2,6 +2,9 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+init -1 python:
+    config.has_autosave = False
+
 define e = Character("Laura",color="#ffeba9")
 define y = Character("You", color="#c88e8e",what_font="font/LiberationSerif-Regular.ttf")
 define both = Character("You and Laura",color="#8595d1ff")

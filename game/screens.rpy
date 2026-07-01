@@ -659,6 +659,7 @@ screen about():
             text _("Youtube- {a=https://www.youtube.com/@Abhibi_lv1}{i}Abhibi_lv1{/i}{/a}\n"):
                 size 34
             text _("Feel free to Support this gorgeous baddie who has too many hobbies an pending projects to say out loud 😝")
+            text _("This game was made using Ren'Py, a free and open source visual novel engine. For more information, visit {a=https://www.renpy.org/}https://www.renpy.org/{/a}.")
 
 style about_label is gui_label
 style about_label_text is gui_label_text
