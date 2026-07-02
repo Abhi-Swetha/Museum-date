@@ -29,3 +29,7 @@ ABOUT THE GAME:
 RUNNING:
 
     click the rose in the main menu or the game menu will start the game , after which runs like a normal Visual novel game.
+
+GAMEPLAY/ VIDEO:
+
+https://github.com/user-attachments/assets/cf809a97-17e3-48ac-8985-e93389482a1c
